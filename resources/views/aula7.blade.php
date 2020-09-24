@@ -13,13 +13,13 @@
                 <div class="col-5">
                     <div class="border rounded box-shadow py-4 px-3 text-center">
                         <img class="img-fluid" width="100" :src="imgLogo">
-                        <h1>{{ titulo }}</h1>
-                        <p>{{ text }} </p>
-                        <p v-if="nome"><span class="text-muted">Autor:</span> {{ nome }}</p>
+                        <h1>@{{ titulo }}</h1>
+                        <p>@{{ text }} </p>
+                        <p v-if="nome"><span class="text-muted">Autor:</span> @{{ nome }}</p>
                         <ul>
-                            <li v-for="usuario in usuarios">{{ usuario.nome | truncate('5') }}</li>
+                            <li v-for="usuario in usuarios">@{{ usuario.nome | truncate('5') }}</li>
                         </ul>
-                        <p v-if="nome">{{  dataHora }}</p>
+                        <p v-if="nome">@{{  dataHora }}</p>
                         <form action="https://gestaoclick.com.br">
                             <div class="form-group">
                                 <label for="nome">Nome:</label>
