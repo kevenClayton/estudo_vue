@@ -1,0 +1,123 @@
+{% import 'DESIGN_DEFAULT_THEME/knowledge/components/_settings.html' %}
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>
+      {{ knowledgeBaseName || rootNavBreadcrumb }}
+    </title>
+    <meta name="description" content="{{ content.meta_description }}">
+    {{ standard_header_includes }}
+    <link href="{{ get_public_template_url('DESIGN_DEFAULT_THEME/knowledge/assets/main.css') }}" rel="stylesheet">
+    <link href="{{ get_public_template_url('DESIGN_DEFAULT_THEME/knowledge/assets/_support-form.css') }}" rel="stylesheet">
+    <style type="text/css" data-preview-theme="true">
+      .kb-article p, .kb-article div, .kb-article td, .kb-article ul, .kb-article ol, .kb-article blockquote {
+        font-family: Georgia !important;
+        font-size: 1rem !important;
+        font-weight: normal !important;
+      }
+      h1 {
+        font-family: Helvetica, Arial, sans-serif !important;
+        font-size: 2rem !important;
+        font-weight: bold !important;
+      }
+      h2 {
+        font-family: Helvetica, Arial, sans-serif !important;
+        font-size: 1.5rem !important;
+        font-weight: 300 !important;
+      }
+      h3, h3 a {
+        font-family: Helvetica, Arial, sans-serif !important;
+        font-size: 1.375rem !important;
+        font-weight: bold !important;
+      }
+      .kb-index__category h3 {
+        font-weight: normal !important;
+      }
+      .kb-index--cards h3, .kb-index--content h3, .kb-index--tiles h3 {
+        font-size: 22px !important;
+      }
+      .kb-index--default h3 {
+        font-size: 18px !important;
+        font-weight: 400 !important;
+      }
+      .kb-categories h3 {
+        font-size: 1.25rem !important;
+      }
+      h4, h4 a {
+        font-family: Helvetica, Arial, sans-serif !important;
+        font-size: 1.125rem !important;
+        font-weight: bold !important;
+      }
+      .kb-index__category h4 {
+        font-weight: normal !important;
+      }
+      a {
+        color: {{ linksColor_live }};
+      }
+      .kb-header,
+      .kb-header a {
+        color: {{ navBarLinkColor }};
+      }
+      .kb-header svg * {
+        fill: {{ navBarLinkColor }};
+      }
+      .kb-search-section {
+        background-color: {{ bg == true && isHeaderPattern != true ? 'transparent' : accentColor }};
+      }
+      .kb-search-section__title {
+        color: {{ headerWelcomeMessageColor }};
+      }
+      .kb-search-section-with-image {
+        background-image: {{ backgroundImage }};
+        background-size: {{ headerBackgroundSize }};
+        color: {{shadowColor}};
+        position: relative;
+      }
+      .kb-mobile-search-section-with-image{
+        background-image: {{ backgroundImage }};
+        color: {{ shadowColor }};
+        background-size: {{ headerBackgroundImage }};
+      }
+      .kb-mobile-search-section {
+        background-color: {{ accentColor }};
+      }
+      .kb-search__suggestions a:hover,
+      .kb-search__suggestions a:focus,
+      .kb-category-menu li.active > a,
+      .kb-category-menu li > a:hover {
+        background-color: rgba({{ linksColor_raw|convert_rgb }}, .1);
+      }
+      .kb-theme--cards .kb-category-menu li.active > a,
+      .kb-theme--cards .kb-category-menu li > a:hover {
+        background-color: transparent;
+      }
+      .kb-breadcrumbs__arrow--left * {
+        fill: {{ accentColor }}
+      }
+      .kb-mobile-menu,
+      .kb-mobile-search__bar {
+        background-color: {{ accentColor }};
+      }
+    </style>
+  </head>
+  <body class="kb-theme--{{ currentTheme }} {% block 'body_classes' %}{% endblock %}">
+    <header>
+      {% block 'header' %}
+      {% include 'DESIGN_DEFAULT_THEME/knowledge/components/_header.html' %}
+      {% include 'DESIGN_DEFAULT_THEME/knowledge/components/_hero_narrow.html' %}
+      {% endblock 'header' %}
+    </header>
+    <main data-preview-id="kb-index-categories-container">
+      {% block 'main_body' %}
+      Don't use this > Not a template
+      {% endblock 'main_body' %}
+    </main>
+    <footer>
+      {% include 'DESIGN_DEFAULT_THEME/knowledge/components/_footer.html' %}
+    </footer>
+    {{ standard_footer_includes }}
+    <script src="{{ get_public_template_url('DESIGN_DEFAULT_THEME/knowledge/assets/kb-search.js') }}"></script>
+    <script src="{{ get_public_template_url('DESIGN_DEFAULT_THEME/knowledge/assets/sticky-header.js') }}"></script>
+  </body>
+</html>

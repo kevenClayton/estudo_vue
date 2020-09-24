@@ -1,0 +1,29 @@
+{% import 'DESIGN_DEFAULT_THEME/knowledge/components/_settings.html' %}
+<div class="kb-search-results">
+  <template id="mytemplate" class="kb-search-results__template" style="display: none;">
+    <li>
+      <a href="" class="kb-search-results__title"></a>
+      <div class="kb-search-results__meta">
+        <span class="kb-search-results__cat"></span>
+        <span class="kb-search-results__subcat">
+          <svg class="kb-breadcrumbs__arrow kb-breadcrumbs__arrow--right" width="7" height="12" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.4905 5.7194c-.018-.045-.0518-.0835-.0795-.125-.0167-.0255-.0323-.052-.049-.0775-.007-.011-.0115-.024-.0216-.034L1.3028.2328c-.2876-.3-.7662-.3115-1.0684-.026a.7468.7468 0 0 0-.0262 1.0605L4.75 6l-4.542 4.733a.7462.7462 0 0 0 .0263 1.0601.7563.7563 0 0 0 .5213.207.7568.7568 0 0 0 .5471-.2325l5.0376-5.2501c.0101-.0105.0146-.023.0217-.0345.0166-.025.0322-.0515.0489-.077.0277-.0415.0614-.08.0795-.125.0187-.0455.0222-.0935.0313-.141.009-.0465.0237-.0925.0237-.14 0-.047-.0147-.093-.0237-.1395-.009-.0475-.0126-.096-.0313-.141" fill="#7C98B6" fill-rule="evenodd"/>
+          </svg>
+          <span class="kb-search-results__subcat-text"></span>
+        </span>
+      </div>
+      <div class="kb-search-results__description" />
+    </li>
+  </template>
+  <h1 class="kb-search-results__heading" data-lang-no-results="{{search_noResults_title|regex_replace(kbSearchTermTranslationPlaceholder, kbSearchTermRaw)}}" data-lang-with-results="{{search_withResults_title|regex_replace(kbSearchTermTranslationPlaceholder, kbSearchTermRaw)}}"></h1>
+  <ul id="hsresults" class="kb-search-results__listing" data-lang-heading="{{search_noResults_heading|regex_replace(kbSearchTermTranslationPlaceholder, kbSearchTermRaw)}}" data-lang-message="{{search_noResults_message|escape}}" data-lang-tip="{{search_noResults_tip}}">
+  </ul>
+  <div class="kb-search-results__pagination" data-search-path="{{ "/" ~ rootSlug if rootSlug }}/kb-search-results">
+    <a href="" class="kb-search-results__prev-page" data-lang="{{search_withResults_previousPageLink}}"></a>
+    <a href="" class="kb-search-results__next-page" data-lang="{{search_withResults_nextPageLink}}"></a>
+  </div>
+</div>
+
+<script src="{{ get_public_template_url('DESIGN_DEFAULT_THEME/knowledge/assets/template.js') }}"></script>
+<script src="{{ get_public_template_url('DESIGN_DEFAULT_THEME/knowledge/assets/url-search-params.js') }}"></script>
+<script src="{{ get_public_template_url('DESIGN_DEFAULT_THEME/knowledge/assets/search-results.js') }}"></script>

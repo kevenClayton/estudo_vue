@@ -1,0 +1,35 @@
+{% import 'DESIGN_DEFAULT_THEME/knowledge/components/_settings.html' %}
+<div class="kb-sticky-footer" data-preview-id="kb-footer">
+  <div class="kb-footer">
+    <div class="kb-footer__logo">
+      <a href="{{ knowledgeBaseRoot }}">
+        <img src="{{ resize_image_url(footerLogo,0,120) }}">
+      </a>
+  	</div>
+    <div class="kb-footer__title">{{ knowledgeBaseFooter }} teste 2</div>
+    <div class="kb-footer__social">
+    	<ul>
+        {% for network in knowledge_base.socialNetworkUrls  %}
+        <li><a href="{{ network.url }}" class="{{ network.networkType|string|lower }}">{{ render_social_icon(network.networkType|string|lower) }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="kb-footer__links-container">
+      <ul class="kb-footer__links">
+        {% if hasFooterCompanyWebsiteLink %}
+          {{ kb_nav_link(companyWebsiteLink if ('http://' in companyWebsiteLink or 'https://' in companyWebsiteLink or companyWebsiteLink == "#") else "//" ~ companyWebsiteLink, companyWebsiteLinkText, "kb-footer__company-website-link") }}
+        {% endif %}
+        {% if hasFooterSupportFormLink and supportFormEnabled %}
+          {{ kb_nav_link_base(knowledgeBaseRoot ~ "kb-tickets/new", knowledge_base.supportFormTitle, "kb-footer__support-form-link") }}
+        {% endif %}
+        {% if hasFooterSignInLink and has_restricted_articles %}
+          {% if request_contact is defined and request_contact.is_logged_in %}
+            {{ kb_nav_link_base("/" ~ "_hcms/mem/logout?redirect_url=" ~ knowledgeBaseRoot, shared_signOut, "kb-footer__sign-in-link") }}
+          {% else %}
+            {{ kb_nav_link_base("/" ~ "_hcms/mem/login?redirect_url=" ~ knowledgeBaseRoot, shared_signIn, "kb-footer__sign-in-link") }}
+          {% endif %}
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</div>

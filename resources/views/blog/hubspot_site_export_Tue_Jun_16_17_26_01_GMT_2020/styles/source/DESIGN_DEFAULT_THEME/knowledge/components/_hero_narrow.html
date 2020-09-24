@@ -1,0 +1,26 @@
+{% import 'DESIGN_DEFAULT_THEME/knowledge/components/_settings.html' %}
+<div class="kb-search-section kb-search-section--narrow {{ "kb-search-section-with-image" if bg == true }}">
+  <div class="kb-search-section__content content-container">
+    <div class="kb-search">
+      <div class="kb-search__placeholder"></div>
+      <div class="kb-search__box">
+        <div class="kb-search__bar">
+          <svg class="kb-search__mag" width="15" height="15" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14.02 12.672l-3.64-3.64a5.687 5.687 0 0 0 1.06-3.312A5.726 5.726 0 0 0 5.72 0 5.726 5.726 0 0 0 0 5.72a5.726 5.726 0 0 0 5.72 5.72 5.687 5.687 0 0 0 3.311-1.06l3.641 3.64a.95.95 0 0 0 1.348 0 .953.953 0 0 0 0-1.348zm-8.3-3.139a3.813 3.813 0 1 1 0-7.626 3.813 3.813 0 0 1 0 7.626z"
+                  fill="#4A4A4A" fill-rule="evenodd" />
+          </svg>
+          <form action="{{ "/" ~ rootSlug if rootSlug }}/kb-search-results">
+            <input type="text" class="kb-search__input" name="term" autocomplete="off" placeholder="{{shared_searchBarPlaceholder}}"
+                   required>
+          </form>
+          <svg class="kb-search__close" width="14" height="14" xmlns="http://www.w3.org/2000/svg">
+            <g stroke="#4A4A4A" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M1 12.314L12.314 1M12.314 12.314L1 1" />
+            </g>
+          </svg>
+        </div>
+        <ul class="kb-search__suggestions" data-lang='{{shared_searchBarTypeahead|regex_replace(kbSearchTermTranslationPlaceholder, kbSearchTermRaw)}}'></ul>
+      </div>
+    </div>
+  </div>
+</div>

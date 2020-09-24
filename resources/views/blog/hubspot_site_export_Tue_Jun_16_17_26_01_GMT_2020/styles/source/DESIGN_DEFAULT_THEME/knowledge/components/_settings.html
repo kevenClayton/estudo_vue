@@ -1,0 +1,60 @@
+{# Theme Settings #}
+{% set companyLogo = knowledge_base.companyLogo %}
+{% set knowledgeBaseName = knowledge_base.name %}
+{% set companyWebsiteLink = knowledge_base.companyWebsiteLink || "#" %}
+{% set companyWebsiteLinkText = knowledge_base.companyWebsiteLinkText || "return" %}
+{% set supportFormEnabled = knowledge_base.supportFormEnabled %}
+{% set rootSlug = knowledge_base.slug %}
+{% set footerLogo = knowledge_base.footerLogo %}
+{% set knowledgeBaseFooter = knowledge_base.footerMessage %}
+{% set hasFooterCompanyWebsiteLink = knowledge_base.hasCompanyWebsiteLink %}
+{% set hasFooterSupportFormLink = knowledge_base.hasSupportFormLink %}
+{% set hasFooterSignInLink = knowledge_base.hasSignInLink %}
+{% if knowledge_base.slug %}
+{% set knowledgeBaseRoot = "/" ~ knowledge_base.slug ~ "/" %}
+{% else %}
+{% set knowledgeBaseRoot = "/" %}
+{% endif %}
+{% set currentTheme = raw_theme_setting('theme_type') || "default" %}
+{% set navBarLinkColor = get_theme_style_setting('nav_bar_link_color.color') || "#00A38D" %}
+{% set accentColor = get_theme_style_setting('header_background_color.color')  %}
+{% set linksColor_raw = raw_theme_setting('links_color.color') %}
+{% set linksColor_live = get_theme_style_setting('links_color.color') %}
+{% set backgroundImage = get_theme_style_setting('header_background_image.src') %}
+{% set backgroundImageRaw = raw_theme_setting('header_background_image.src') %}
+{% set socialIconShape = raw_theme_setting('social_icon_style') %}
+{% set socialIconColor = raw_theme_setting('social_icon_color') %}
+{% set headerWelcomeMessageColor = get_theme_style_setting('header_welcome_message_color.color') || "#FFFFFF" %}
+{% set headerBackgroundStyle = raw_theme_setting('header_background_style') %}
+{% set headerBackgroundSize = headerBackgroundStyle == 'STRETCH' ? 'cover' : headerBackgroundStyle == 'TILE' ? 'contain' : 'auto' %}
+{% set bg = true if (backgroundImageRaw != null && backgroundImageRaw != '' && backgroundImageRaw != undefined) %}
+{% set isHeaderPattern = true if (backgroundImageRaw is string_containing 'img/hs_kb_template_images/patterns/header_pattern' ) %}
+{% set shadowColor = "#ffffff" %}
+{% set kbSearchTermRaw = " &quot;{% raw %}" + kb_search_term|escape + "{% endraw %}&quot;" %}
+{% set kbSearchTermTranslationPlaceholder = '"{{kb_search_term}}"' %}
+
+{# Mock Data #}
+{% set socialNetworkUrls = [{networkType: "FACEBOOK", url: "https://www.facebook.com"}, {networkType: "INSTAGRAM", url: "https://www.instagram.com"}] %}
+
+
+{# Helpers #}
+{% macro kb_nav_link_base(href, label, className) %}
+  <li {{ "class='" ~ className ~ "'" if className }}><a href="{{ href }}">{{ label }}</a></li>
+{% endmacro %}
+
+{% macro kb_nav_link(href, label, className) %}
+<li {{ "class='" ~ className ~ "'" if className }}>
+  <a href="{{ href }}" target="_blank">
+    {{ label }}
+    <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8.11 10.223V7.0472l1.308-1.3077v4.4835c0 .9323-.7628 1.6952-1.6953 1.6952H1.6952C.7628 11.9182 0 11.1553 0 10.223V4.1955C0 3.2628.7628 2.5 1.6952 2.5h4.4833L4.8707 3.8082H1.6952c-.2099 0-.3872.1771-.3872.3873v6.0275c0 .2098.1773.387.3872.387h6.0275c.21 0 .3873-.1772.3873-.387zM5.9428.4417L12.0137 0l-.442 6.0708L9.6368 4.136 6.0925 7.68 4.3333 5.9207l3.544-3.5442L5.9428.4417z"
+            fill="{{ linksColor_raw }}" />
+    </svg>
+  </a>
+</li>
+{% endmacro %}
+
+{% macro render_social_icon(network) %}
+  {% set socialIconName = [network, socialIconShape, socialIconColor]|join('_') %}
+  <img src="https://static.hsstatic.net/TemplateAssets/static-1.17/img/hs_default_template_images/modules/Follow+Me+-+Email/{{ socialIconName }}.png">
+{% endmacro %}

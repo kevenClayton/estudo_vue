@@ -1,0 +1,94 @@
+<div class="kb-categories">
+  {% for cat in category_organization.categories %}
+    {% if cat.id == selected_category_id %}
+  		{% if (currentTheme != "cards") && (cat.iconSrc) %}
+  			<img src="{{ cat.iconSrc }}" class="kb-categories__category-icon">
+		  {% endif %}
+      <h1 id="{{ cat.fullPath|split('/')|first }}">{{ cat.name }}</h1>
+      <div class="kb-categories__category-description">{{ cat.description }}</div>
+      {% set articlesRendered = {'i': false} %} 
+      {% if cat.articles %}
+        {% for article in cat.articles %}
+          {% if articlesRendered.i == false %}
+            <div class="kb-categories__item">
+              <ul> 
+          {% endif %}
+          <li>
+            <a href="{{ article.absoluteUrl }}">{{ article.name }}</a>
+          </li>
+          {% set _dummy = articlesRendered.update({'i':true}) %}
+          {% if loop.last && articlesRendered.i == true %}
+              </ul>
+            </div>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+      {% for subCat in cat.subcategories %}
+        <div class="kb-categories__item" id="{{ subCat.fullPath|split('/')|last }}">
+          <h3>{{ subCat.name }}</h3>
+          <ul>
+            {% if subCat.articles %}
+            {% for subArticle in subCat.articles %}
+              <li><a href="{{subArticle.absoluteUrl}}">{{ subArticle.name }}</a></li>
+            {% endfor %}
+          {% endif %}
+          </ul>
+        </div>
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+</div>
+
+<script>
+  var kbSmoothScroll = function() {
+    var linksArray = $('.open a');
+    var updateActiveMenuItem = function(selectedItemPath) {
+      linksArray.parent('li').removeClass('active');
+      $('a[href="' + selectedItemPath + '"]').parent('li').addClass("active");
+    };
+    linksArray.each(function() {
+      $(this).on('click', function(e) {
+        e.preventDefault();
+        var decodedHash = decodeURI(e.target.hash);
+        var targetPathWithHash = e.target.pathname + decodedHash;
+        var clickedState = {
+          path: targetPathWithHash,
+          parentCat: e.target.pathname.replace('/', ''),
+          childCat: decodedHash.replace('#', '')
+        };
+        $('.kb-mobile-header').removeClass('menu-open');
+        scrollToCategory(clickedState);
+        history.pushState(clickedState, '', e.target.href);
+      });
+    });
+    var scrollToCategory = function(passedState) {
+      var currentHeaderHeight = $('.kb-search-section').outerHeight(true);
+      var selectedId = passedState.childCat || passedState.parentCat;
+      updateActiveMenuItem(passedState.path);
+      $('html, body').animate({
+        scrollTop: $("#" + selectedId).offset().top - currentHeaderHeight
+      }, 500);
+    };
+    var scrollToCategoryNoAnimation = function(passedState) {
+      var selectedId = passedState.childCat || passedState.parentCat;
+      updateActiveMenuItem(passedState.path);
+    }
+    window.addEventListener('popstate', function(e) {
+      if (e.state !== undefined) {
+        scrollToCategory(e.state);
+      }
+    });
+    var init = (function() {
+      initialState = {
+        path: window.location.pathname,
+        parentCat: window.location.pathname.replace('/', ''),
+        childCat: window.location.hash.substr(1)
+      };
+      scrollToCategoryNoAnimation(initialState);
+    })();
+  }
+
+  $('.kb-category-menu').each(function() {
+    kbSmoothScroll($(this));
+  });
+</script>

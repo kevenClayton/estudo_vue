@@ -1,0 +1,13 @@
+<html>
+ <head></head>
+ <body>
+  var hsSearch=function(e){var t,n,c,r,a=e,o=e.querySelector(".kb-search__input"),s="",u=e.querySelector(".kb-search__suggestions"),i=e.querySelector(".kb-search__close"),l=function(){u.innerHTML="",o.focus(),a.classList.remove("kb-search--open")},f=function(){var e=document.querySelector(".kb-search").getAttribute("kb-language-tag"),t="/_hcms/search?portalId="+encodeURIComponent(hsVars.portal_id)+"&amp;term="+encodeURIComponent(s)+"&amp;language="+encodeURIComponent(e)+"&amp;type=KNOWLEDGE_ARTICLE&amp;requestSource=LIVE_PAGE&amp;analytics=true&amp;autocomplete=true&amp;limit=5";kbDom.getJSON(t,(function(e){var t,n;e.results.length&gt;0?(t=e.results,n=t.map((function(e,t){var n=e.title,c=e.category,r=e.subcategory,a=e.url;return e.description,'
+  <li id="result'+t+'"><a href="'+a+'">
+    <div class="kb-search__suggestions__article-title">
+     '+n+"
+    </div>"+(c?'
+    <div class="kb-search__suggestions__breadcrumb kb__text-link">
+     '+c+(r?"&nbsp;&nbsp;&gt;&nbsp;&nbsp;"+r:"")+"
+    </div>":"")+"</a></li>"})),u.innerHTML=n.join(""),a.classList.add("kb-search--open"),h()):l()}))},h=function(){var e=[];e.push(o[0]),u.querySelectorAll("a").forEach((function(t){e.push(t)}));var t=e[0],n=e[e.length-1];a.addEventListener("keydown",(function(c){switch(c.which){case 9:!function(e){e.target!=n||e.shiftKey?e.target==t&amp;&amp;e.shiftKey&amp;&amp;(e.preventDefault(),n.focus()):(e.preventDefault(),t.focus())}(c);break;case 27:l();break;case 38:!function(c){c.preventDefault(),c.target==t?n.focus():e.forEach((function(t){t==c.target&amp;&amp;e[e.indexOf(t)-1].focus()}))}(c);break;case 40:!function(c){c.preventDefault(),c.target==n?t.focus():e.forEach((function(t){t==c.target&amp;&amp;e[e.indexOf(t)+1].focus()}))}(c)}})),i.addEventListener("click",(function(){l()}))},d=(t=function(){(s=o.value).length&gt;0?f():0==s.length&amp;&amp;l()},n=250,function(){var e=this,a=arguments,o=function(){r=null,c||t.apply(e,a)},s=c&amp;&amp;!r;clearTimeout(r),r=setTimeout(o,n||200),s&amp;&amp;t.apply(e,a)});o.addEventListener("keyup",(function(e){9!=e.which&amp;&amp;40!=e.which&amp;&amp;38!=e.which&amp;&amp;27!=e.which&amp;&amp;s!=o.value&amp;&amp;d()}))};kbDom.whenReady((function(){document.querySelectorAll(".kb-search").forEach((function(e){hsSearch(e)}))})),document.addEventListener("invalid",(function(e){e.preventDefault(),document.getElementById("searchInput").focus()}),!0);
+ </body>
+</html>

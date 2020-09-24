@@ -1,0 +1,12 @@
+{% set articleTitle = content.name %}
+{% set articleSummary = content.article_summary %}
+{% set articleBody = content.article_body %}
+
+<div
+  class="kb-article {% if content.generator == 'TINYMCE' %}tinymce-content{% else %}draftjs-content{% endif %}"
+>
+  <h1>{{ articleTitle }}</h1>
+  {% if articleSummary %}
+  <h2>{{ articleSummary }}</h2>
+  {% endif %} {{ articleBody }}
+</div>

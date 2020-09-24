@@ -51,7 +51,7 @@
                         <input type="checkbox" value="futebol" v-model="pessoa.interesses">Futebol<br/>
                         <input type="checkbox" value="futvolei" v-model="pessoa.interesses">Futvolei<br/>
                         <input type="checkbox" value="f1" v-model="pessoa.interesses">F1<br/>
-                        <input type="checkbox" valur="volei" v-model="pessoa.interesses">Vôlei<br/>
+                        <input type="checkbox" value="volei" v-model="pessoa.interesses">Vôlei<br/>
                         <label for="">Como nos conheceu:</label>
                         <select type="text" v-model="pessoa.conheceu">
                             <option value="">Selecione</option>
@@ -73,7 +73,7 @@
             el: "#app",
             data: {
                 status: true,
-                titulo: "Vue JS Treinamento",
+                titulo: "Vue JS",
                 textoExibir: true,
                 linguagens: [
                     {nome: "PHP"},

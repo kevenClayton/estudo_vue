@@ -1,0 +1,144 @@
+/* @import url('http://example.com/example_style.css'); */
+
+/***********************************************/
+/* CSS @imports must be at the top of the file */
+/* Add them above this section                 */
+/***********************************************/
+
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville|Open+Sans');
+
+/****************************************/
+/* HubSpot Style Boilerplate            */
+/****************************************/
+
+/* These includes are optional, but helpful. */
+{% include "hubspot/styles/responsive/modules.css" %}
+{% include "hubspot/styles/patches/recommended.css" %}
+
+
+/*****************************************/
+/* Start your style declarations here    */
+/*****************************************/
+
+html {
+    height: 100%;
+    background-image: url("https://cdn2.hubspot.net/hubfs/5929776/bg-l.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    color: white;
+    cursor: default;
+}
+
+body {
+    min-height: 100%;
+    margin: 0;
+    padding-top: 1px;
+    background: -moz-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,255,.6) 100%); /* ff3.6+ */
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(255,255,255,1)), color-stop(100%, rgba(255,255,255,255,.6))); /* safari4+,chrome */
+    background: -webkit-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,255,.6) 100%); /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,255,.6) 100%); /* opera 11.10+ */
+    background: -ms-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,255,.6) 100%); /* ie10+ */
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,.6) 100%); /* w3c */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFFFF', endColorstr='#FFFFFF',GradientType=1 ); /* ie6-9 */
+    background: rgba(1,1,1,0.7);
+}
+
+.header-container-wrapper {
+    max-width: 700px;
+    margin: 40px auto 0;
+    padding: 0 20px;
+}
+
+.body-container-wrapper {
+    max-width: 700px;
+    margin: 100px auto 0;
+    padding: 0 20px;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 50px;
+    line-height: 58px;
+    font-weight: bold;
+}
+
+p {
+    margin: 20px 0 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    line-height: 30px;
+    color: #d6d6d6;
+}
+
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], select {
+    box-sizing: border-box;
+    margin: 10px 0 20px;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 16px;
+    color: #333333;
+}
+
+a.hs-button, input[type="button" i], input[type="submit" i], input[type="reset" i], input[type="file" i]::-webkit-file-upload-button, button {
+    display: inline-block;
+    margin: 40px 0 0;
+    padding: 0 40px;
+    padding: 15px 30px;
+    background-color: #0099FF;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+a.hs-button:hover, input[type="button" i]:hover, input[type="submit" i]:hover, input[type="reset" i]:hover, input[type="file" i]::-webkit-file-upload-button:hover, button:hover {
+    background-color: #008ae6;
+}
+
+footer {
+    max-width: 700px;
+    margin: 80px auto 0;
+    padding: 20px 0;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .header-container-wrapper {
+        margin: 20px auto 0;
+    }
+    
+    .body-container-wrapper {
+        margin: 60px auto 0;
+    }
+    
+    h1 {
+        font-size: 40px;
+        line-height: 48px;
+    }
+    
+    p {
+        margin: 20px 0 0;
+        font-size: 18px;
+        line-height: 28px;
+    }
+    
+    button {
+        margin: 40px 0 0;
+        min-width: 280px;
+    }
+}

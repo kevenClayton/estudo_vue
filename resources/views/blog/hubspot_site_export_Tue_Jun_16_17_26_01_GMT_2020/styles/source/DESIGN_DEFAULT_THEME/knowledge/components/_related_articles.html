@@ -1,0 +1,17 @@
+{% set relatedArticlesEnabled = knowledge_base.relatedArticlesEnabled %}
+
+<div
+  id="kb-related-articles-container"
+  portal-id="{{ content.portalId }}"
+  knowledge-base-id="{{ content.contentGroupId }}"
+  article-id="{{ content.id }}"
+  contact-vid="{{ request_contact.contactVid }}"
+  heading="{{ relatedArticles_heading }}"
+  enviro="{{ environment }}"
+>
+  {% if relatedArticlesEnabled and 'KnowledgeContent:RelatedArticles' in gates %}
+    <div id="kb-related-articles"></div>
+    <link rel="stylesheet" href="https://js.hubspotfeedback{{ "qa" if environment != 'prod' }}.com/relatedarticles.css" />
+    <script type="text/javascript" src="https://js.hubspotfeedback{{ "qa" if environment != 'prod' }}.com/relatedarticles.js"></script>
+  {% endif %}
+</div>

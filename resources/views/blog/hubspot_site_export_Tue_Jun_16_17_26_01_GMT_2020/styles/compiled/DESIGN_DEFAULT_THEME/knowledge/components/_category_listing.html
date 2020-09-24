@@ -1,0 +1,109 @@
+<!-- start coded_template: id:10269087670 path:@hubspot/themes/knowledge/components/_category_listing.html --><html><head><meta name="generator" content="HubSpot"></head><body><div class="kb-categories">
+  
+</div>
+
+<script>
+  kbDom.whenReady(function() {
+    var kbSubcategoryOnExpand = function(articles, toggle) {
+      articles.classList.add('expanded');
+      toggle.textContent = '';
+    }
+
+    var kbSubcategoryOnCollapse = function(articles, toggle) {
+      articles.classList.remove('expanded');
+      toggle.textContent = '';
+    }
+
+    var kbSubcategorySetupExpand = function(toggle) {
+      toggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        var allArticles = document.querySelectorAll('.kb-subcategory__articles');
+        var articles = kbDom.siblings(toggle, '.kb-subcategory__articles')[0];
+        var isExpanded = articles.classList.contains('expanded');
+        if (isExpanded) {
+          kbSubcategoryOnCollapse(articles, toggle);
+        } else {
+          allArticles.forEach(function(el) {
+            var curToggle = kbDom.siblings(el, '.kb-subcategory__expand-articles-toggle')[0];
+            if (curToggle) {
+              kbSubcategoryOnCollapse(el, curToggle);
+            }
+          })
+
+          kbSubcategoryOnExpand(articles, toggle);
+        }
+      })
+    }
+
+    document.querySelectorAll('.kb-subcategory__expand-articles-toggle').forEach(function(el) {
+      kbSubcategorySetupExpand(el);
+    });
+
+    var AFTER_THE_LAST_SLASH_REGEX = /\/([^\/]+)\/?$/;
+    var smoothScroll = new smoothAnchorsScrolling();
+
+    var categoriesSmoothScroll = function() {
+      var linksArray = document.querySelectorAll('.open a');
+      var updateActiveMenuItem = function(selectedItemPath) {
+        linksArray.forEach(function(link) {
+          kbDom.closest('li', link).classList.remove('active');
+        })
+        document.querySelectorAll('a[href="' + selectedItemPath + '"]').forEach(
+          function(link) {
+            kbDom.closest('li', link).classList.add('active');
+          }
+        );
+      };
+      linksArray.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          var node = e.currentTarget;
+          var decodedHash = decodeURI(node.hash);
+          var decodedPathname = decodeURI(node.pathname);
+          var targetPathWithHash = decodedPathname + decodedHash;
+          var clickedState = {
+            path: targetPathWithHash,
+            parentCat: decodedPathname.match(AFTER_THE_LAST_SLASH_REGEX)[1],
+            childCat: decodedHash.replace('#', '')
+          };
+          document.querySelector('.kb-mobile-header').classList.remove('menu-open');
+          scrollToCategory(clickedState);
+          history.pushState(clickedState, '', node.href);
+        });
+      });
+      var scrollToCategory = function(passedState) {
+        var selectedId = passedState.childCat || passedState.parentCat;
+        updateActiveMenuItem(passedState.path);
+
+        var target = document.querySelector('[id="' + selectedId + '"]');
+        smoothScroll.scrollTo(target);
+      };
+      window.addEventListener('popstate', function(e) {
+        if (!e.state) {
+          history.back();
+        } else {
+          scrollToCategory(e.state);
+        }
+      });
+      var init = (function() {
+        var decodedHash = decodeURI(window.location.hash);
+        var decodedPathname = decodeURI(window.location.pathname);
+        var initialState = {
+          path: decodedPathname + decodedHash,
+          parentCat: decodedPathname.match(AFTER_THE_LAST_SLASH_REGEX)[1],
+          childCat: decodedHash.substr(1)
+        };
+        if (decodedHash) {
+          setTimeout(function() {
+            scrollToCategory(initialState);
+          }, 1);
+        }
+        history.pushState(initialState, null, '');
+      })();
+    }
+
+    categoriesSmoothScroll();
+  });
+</script>
+<!-- end coded_template: id:10269087670 path:@hubspot/themes/knowledge/components/_category_listing.html -->
+</body></html>

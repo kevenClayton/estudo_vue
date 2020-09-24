@@ -1,0 +1,26 @@
+{% extends 'DESIGN_DEFAULT_THEME/knowledge/base.html' %}
+
+{% block 'body_classes' %}kb-page--index{% endblock 'body_classes' %}
+
+{% block 'header' %}
+  {% include 'DESIGN_DEFAULT_THEME/knowledge/components/_header.html' %}
+  {% include 'DESIGN_DEFAULT_THEME/knowledge/components/_hero_full.html' %}
+{% endblock 'header' %}
+
+{% block 'main_body' %}
+<div>
+  <div class="content-container">
+    {% if currentTheme == "minimal" %}
+      {% include 'DESIGN_DEFAULT_THEME/knowledge/components/_index_minimal.html' %}
+    {% elif currentTheme == "cards" %}
+      {% include 'DESIGN_DEFAULT_THEME/knowledge/components/_index_cards.html' %}
+    {% elif currentTheme == "tiles" %}
+      {% include 'DESIGN_DEFAULT_THEME/knowledge/components/_index_tiles.html' %}
+    {% elif currentTheme == "content" %}
+      {% include 'DESIGN_DEFAULT_THEME/knowledge/components/_index_content.html' %}
+    {% else %}
+      {% include 'DESIGN_DEFAULT_THEME/knowledge/components/_index_default.html' %}
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

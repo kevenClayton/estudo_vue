@@ -1,0 +1,31 @@
+<div class="kb-index kb-index--minimal {{ "kb-index--narrow" if homepage_organization.categories|length <= 4 }} {{ "kb-index--single" if homepage_organization.categories|length == 1 }}">
+  {% if theme_preview_mode && homepage_organization.categories|length == 0 %}
+    {% for idx in [1,2,3,4,5,6] %}
+      <div class="kb-index__category kb-index__category--3col kb-index__category-placeholder" />
+    {% endfor %}
+  {% else %}
+    {% for cat in homepage_organization.categories %}
+      <a href="{{ "/" ~ knowledge_base.slug if knowledge_base.slug }}{{ cat.fullPath }}" id="kb-index__category-{{ cat.id }}" class="kb-index__category kb-index__category--3col" data-preview-id="kb-index__category-{{ cat.id }}">
+        {% if cat.imageType == "IMAGE" && cat.imageSrc %}
+          <img src="{{ cat.imageSrc }}" class="kb-index__category-icon" />
+        {% else %}
+          {% if cat.imageType == "ICON" && cat.icon && cat.icon.name && cat.icon.type %}
+            <div class="kb-index__category-icon" style="color: {{ cat.color }};">
+              {% icon name="{{ cat.icon.name }}" set="fontawesome-5" style="{{ cat.icon.type }}" format="unicode" %}
+            </div>
+          {% else %}
+            {% if theme_preview_mode %}
+              <img src="" class="kb-index__category-icon" />
+            {% else %}
+              <div class="kb-index__category-icon" />
+            {% endif %}
+          {% endif %}
+        {% endif %}
+        <h3>{{ cat.name }}</h3>
+        <div class="kb-index__category-description">
+          {{ cat.description }}
+        </div>
+      </a>
+    {% endfor %}
+  {% endif %}
+</div>

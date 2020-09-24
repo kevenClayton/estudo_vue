@@ -1,0 +1,298 @@
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800';
+
+/**
+ * CSS @imports must be at the top of the file.
+ * Add them above this section.
+ */
+
+
+
+/* ==========================================================================
+   HS COS Boilerplate v1.3.0
+   ========================================================================== */
+
+/* This responsive framework is required for all styles. */
+{% include "hubspot/styles/responsive/required_base.css" %}
+{% include "hubspot_default/shared/responsive/theme-foundation-v1-0.css" %}
+{% include "hubspot/styles/responsive/hubtheme-modules.css" %}
+
+/* These includes are optional, but helpful. */
+{% include "hubspot/styles/patches/recommended.css" %}
+
+/* SIZING */
+{% set maxWidth                = "800px" %}
+{% set defaultSpacing          = "80px 0px" %}
+{% set mobileSpacing           = "30px 0px" %}
+
+
+/* COLORS */
+{% set colorBody               = "#ffffff" %}
+{% set colorOffset             = "#f7f7fa" %}
+{% set colorText               = "#1f3045" %}
+{% set colorPrimary            = "#f45373" %}
+
+/* MARQUEE COLORS */
+{% set colorMarqueeStart       = "#232938" %}
+{% set colorMarqueeEnd         = "#232938" %}
+{% set marqueeOpacity          = ".9" %}
+{% set colorMarqueeText        = "#fff" %}
+
+/* VIDEO COLORS */
+{% set colorVideoStart         = "#e7683e" %}
+{% set colorVideoEnd           = "#e7683e" %}
+{% set VideoOpacity            = ".9" %}
+{% set colorVideoText          = "#fff" %}
+
+/* HELPERS */
+.shadow {
+  box-shadow: 0 5px 45px 5px rgba(0, 0, 0, 0.13);
+}
+.offset {
+  background: {{ colorOffset }};
+}
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+
+/* ALIGNMENT */
+.middle-wrapper {
+  font-size: 0;
+}
+.middle {
+  font-size: 1rem;
+  display: inline-block !important;
+  vertical-align: middle;
+  float: none !important;
+}
+
+/* GENERAL */
+body {
+  -webkit-font-smoothing: antialiased;
+  background: {{ colorBody }};
+  line-height: 1.6;
+  font-weight: 300;
+  color: {{ colorText }};
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+.container {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 0 30px;
+  max-width: {{ maxWidth }};
+  float: none !important;
+}
+img {
+  margin: 1rem 0;
+}
+
+/* TYPOGRAPHY */
+a {
+  color: {{ colorPrimary }};
+  text-decoration:none;
+}
+h1,h2,h3,h4,h5,h6,p {
+  margin: 1rem 0;
+}
+
+/* SECTIONS */
+.section {
+  padding: {{ defaultSpacing }};
+}
+
+/* HERO */
+.hero {
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.hero img {
+  max-height: 50px;
+  width: auto !important;
+  margin: 0 0;
+}
+.hero h1 {
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1.3;
+  margin: 2rem 0;
+}
+.hero p {
+  font-weight: 500;
+  font-size: 14px;
+}
+.hero ul {
+  margin-top: 2rem;
+  padding-left: 20px;
+  margin-left: 0;
+}
+.hero li {
+  font-size: 18px;
+  font-weight: 400;
+}
+.hero .form-wrapper {
+  background: #fff;
+  padding: 40px;
+  padding-top: 30px;
+  text-align: center;
+  color: {{ colorText }};
+  box-shadow: rgba(0, 0, 0, .2) 0px 10px 20px -8px;
+}
+.hero .form-wrapper h3 {
+  margin: 0 0;
+  color: {{ colorPrimary }}
+}
+.hero .form-wrapper p {
+  font-size: 13px;
+  font-weight: 500;
+}
+.hero .form {
+  text-align: left;
+  font-size: 12px;
+  font-weight: 500;
+}
+.hero .form input[type="text"],.hero .form input[type="password"],.hero .form input[type="email"],.hero .form input[type="tel"], textarea, .hero .form select {
+  text-align: left;
+  width: 100% !important;
+  display: block;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #c4d5e9;
+  font-size: 14px;
+  border-radius: 4px;
+  height: 40px;
+  background: #fff;
+  color: {{ colorText }};
+  font-weight: 500;
+}
+textarea {
+  height: 150px;
+}
+.hero .form .hs-form-required {
+  display: none;
+}
+.hero .form ul, .hero .form ol {
+  list-style: none !important;
+  padding-left: 0;
+}
+.hero .form input[type="checkbox"],.hero .form input[type="radio"] {
+  margin-right: 10px;
+  width: auto !important;
+  display: inline;
+}
+.hero .form .hs-button {
+  padding: 15px 10px;
+  background: {{ colorPrimary }};
+  color: #fff;
+  display:block;
+  margin-top:14px;
+  text-align:center;
+  font-size:16px;
+  border: none;
+  display:block;
+  width:100%;
+  border-radius:4px;
+  font-weight: 900;
+}
+
+/* FEATURES */
+.features {
+  text-align: center;
+}
+.features img {
+  max-width: 50px;
+}
+
+/* SWITCHBACK */
+.switchback {
+  background: #ca3338;
+  color: #fff;
+}
+
+/* SOLUTIONS */
+.solutions {
+  text-align: center;
+}
+.solutions .solution {
+
+}
+.solutions img {
+  margin: 0 0;
+}
+.solutions .solution-text {
+  border: 1px solid #eee;
+  border-top: 0;
+  padding: 10px 20px;
+}
+.solutions h3 {
+  font-weight: 900;
+  font-size: 16px;
+  color: {{ colorPrimary }};
+}
+.solutions p {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* TESTIMONIALS */
+.testimonials p {
+  font-weight: 500;
+  font-size: 14px;
+}
+.testimonials .testimonial img {
+  border-radius: 50%;
+  margin: 0 0;
+}
+.testimonials .testimonial em {
+  opacity: .6;
+  font-size: 14px;
+}
+
+/* CTA */
+.cta {
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.cta h2 {
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1.3;
+  margin: 2rem 0;
+}
+.cta p {
+  font-weight: 500;
+  font-size: 14px;
+}
+.cta a {
+  margin: 1.5rem 0;
+}
+
+/* FOOTER */
+.footer {
+  padding: 20px 0;
+  background: #ca3338;
+  color: #fff;
+  text-align: center;
+}
+
+/* RESPONSIVE STYLES */
+@media (max-width: 767px) {
+  .container {
+    padding: 0 20px;
+  }
+  .section {
+    padding: {{ mobileSpacing }};
+  }
+}

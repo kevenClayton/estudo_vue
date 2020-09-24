@@ -1,0 +1,150 @@
+{% import 'DESIGN_DEFAULT_THEME/knowledge/components/_settings.html' %}
+<div class="kb-header" data-preview-id="kb-header">
+  <div class="kb-header-inner" id="kb-header">
+    <div class="kb-header__logo">
+      <a href="{{ knowledgeBaseRoot }}">
+        <img src="{{ resize_image_url(companyLogo,0,120) }}">
+      </a>
+    </div>
+    <a class="kb-header__title" href="{{ knowledgeBaseRoot }}">
+      {{ knowledgeBaseName || rootNavBreadcrumb }}
+    </a>
+    <nav id="kb-header__nav" class="kb-header__nav" role="navigation">
+      <ul>
+        {{ kb_nav_link(companyWebsiteLink if ('http://' in companyWebsiteLink or 'https://' in companyWebsiteLink or companyWebsiteLink == "#") else "//" ~ companyWebsiteLink, companyWebsiteLinkText, "kb-header__company-website-link") }}
+        {% if supportFormEnabled %}
+        	{{ kb_nav_link_base(knowledgeBaseRoot ~ "kb-tickets/new", knowledge_base.supportFormTitle, "kb-header__support-form-link") }}
+        {% endif %}
+        {% if has_restricted_articles %}
+          {% if request_contact is defined and request_contact.is_logged_in %}
+            {{ kb_nav_link_base("/" ~ "_hcms/mem/logout?redirect_url=" ~ knowledgeBaseRoot, shared_signOut, "kb-header__sign-in-link") }}
+          {% else %}
+            {{ kb_nav_link_base("/" ~ "_hcms/mem/login?redirect_url=" ~ knowledgeBaseRoot, shared_signIn, "kb-header__sign-in-link") }}
+          {% endif %}
+        {% endif %}
+      </ul>
+    </nav>
+    <a href="#" class="kb-header__nav-close" role="button" aria-controls="kb-header__nav">
+      <span class="kb-icon close" aria-hidden="true">
+        <svg width="16" height="17" xmlns="http://www.w3.org/2000/svg">
+          <g fill="#2D3E50" fill-rule="nonzero">
+            <path d="M15.07107 1.42893c.59587.59588.88893 1.23239.0505 2.07081L2.99975 15.62158c-.83842.83842-1.48089.5394-2.0708-.05051C.33305 14.97519.04 14.33868.87841 13.50026L13.00026 1.37842c.83842-.83842 1.48089-.5394 2.0708.05051z"/>
+            <path d="M15.07107 15.57107c-.59588.59587-1.23239.88893-2.07081.0505L.87842 3.49975C.04 2.66132.33902 2.01885.92893 1.42894 1.52481.83305 2.16132.54 2.99974 1.37841l12.12184 12.12184c.83842.83842.5394 1.48089-.05051 2.0708z"/>
+          </g>
+        </svg>
+      </span>
+    </a>
+    <a href="#kb-header" class="kb-header__nav-toggle" role="button" aria-controls="kb-header__nav">
+      <span class="kb-icon menu">
+        <svg width="25" height="17" xmlns="http://www.w3.org/2000/svg">
+          <g fill="#2D3E50" fill-rule="nonzero">
+            <path d="M24.56897 2.295c0 .85-.2931 1.513-1.72414 1.513H2.15517C.72414 3.808.43103 3.1365.43103 2.295c0-.85.2931-1.513 1.72414-1.513h20.68966c1.43103 0 1.72414.6715 1.72414 1.513zM24.56897 8.8315c0 .85-.2931 1.513-1.72414 1.513H2.15517c-1.43103 0-1.72414-.6715-1.72414-1.513 0-.85.2931-1.513 1.72414-1.513h20.68966c1.43103 0 1.72414.6715 1.72414 1.513zM24.56897 15.3595c0 .85-.2931 1.513-1.72414 1.513H2.15517c-1.43103 0-1.72414-.6715-1.72414-1.513 0-.85.2931-1.513 1.72414-1.513h20.68966c1.43103 0 1.72414.6715 1.72414 1.513z"/>
+          </g>
+        </svg>
+      </span>
+    </a>
+  </div>
+</div>
+<!-- Mobile Menu -->
+<div class="kb-mobile-search-section">
+  <div class="kb-mobile-header">
+    <div class="kb-mobile-menu">
+      <div class="kb-mobile-menu__current-page">
+        {% for cat in category_organization.categories %}
+          {% if selected_subcategory_id && cat.subcategories %}
+            {% for subCat in cat.subcategories %}
+              {% if subCat.id == selected_subcategory_id %}
+              {{subCat.name}}
+              {% endif %}
+            {% endfor %}
+          {% else %}
+            {% if  cat.id == selected_category_id %}
+            {{cat.name}}
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+        <svg class="kb-mobile-menu__arrow" width="12" height="7" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10.6817 1.6816l-4.5364 4-4.5364-3.9315" stroke="#00A38D" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <ul>
+        {% for cat in category_organization.categories %}
+        <li
+            {% if cat.id == selected_category_id %}
+            	class="active open"
+            {% else %}
+              {% for item in cat.subcategories %}
+                {% if item.id == selected_subcategory_id %}
+                	class="open"
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+            >
+          <a href="{{ "/" ~ rootSlug if rootSlug }}{{ cat.fullPath }}">
+            {{ cat.name }}
+          </a>
+          <ul>
+            {% for subCat in cat.subcategories %}
+            <li {% if subCat.id == selected_subcategory_id %}class="active"{% endif %}>
+              <a href="{{ "/" ~ rootSlug if rootSlug }}/{{ subCat.fullPath|split('/')|join('#') }}">
+                {{ subCat.name }}
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="kb-mobile-search kb-search">
+      <div class="kb-mobile-search__placeholder"></div>
+      <div class="kb-mobile-search__box">
+        <div class="kb-mobile-search__bar">
+          <svg class="kb-mobile-search__mag" width="15" height="15" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14.02 12.672l-3.64-3.64a5.687 5.687 0 0 0 1.06-3.312A5.726 5.726 0 0 0 5.72 0 5.726 5.726 0 0 0 0 5.72a5.726 5.726 0 0 0 5.72 5.72 5.687 5.687 0 0 0 3.311-1.06l3.641 3.64a.95.95 0 0 0 1.348 0 .953.953 0 0 0 0-1.348zm-8.3-3.139a3.813 3.813 0 1 1 0-7.626 3.813 3.813 0 0 1 0 7.626z" fill="#4A4A4A" fill-rule="evenodd"/>
+          </svg>
+          <form action="{{ "/" ~ rootSlug if rootSlug }}/kb-search-results">
+            <input type="text" class="kb-mobile-search__input kb-search__input" name="term" autocomplete="off" placeholder="{{shared_searchBarPlaceholder}}">
+            <input type="hidden" name="ref" value="{{ content.id }}">
+          </form>
+          <svg class="kb-mobile-search__close" width="14" height="14" xmlns="http://www.w3.org/2000/svg">
+            <g stroke="#4A4A4A" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M1 12.314L12.314 1M12.314 12.314L1 1"/>
+            </g>
+          </svg>
+        </div>
+        <ul class="kb-search__suggestions" data-lang='{{search_withResults_title|regex_replace(kbSearchTermTranslationPlaceholder, kbSearchTermRaw)}}'></ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function() {
+    // Mobile Nav Menu
+    $(window).bind('hashchange', function() {
+      var hash = window.location.hash;
+      var navMenuOpen = hash === '#kb-header';
+      $('body').toggleClass('kb__header-nav-open', navMenuOpen);
+    });
+
+    // Init Search
+    $('.kb-search').each(function(){
+      var hsSearchModule = hsSearch($(this));
+    });
+
+    // Mobile Cat Menu
+    $('.kb-mobile-menu__current-page').on('click',function() {
+      $('.kb-mobile-header').toggleClass('menu-open');
+    });
+    $('.kb-mobile-search__mag').on('click',function() {
+      $('.kb-mobile-header').toggleClass('search-open');
+      if ($('.kb-mobile-header').hasClass('search-open')) {
+        $('.kb-mobile-search__input').focus();
+      }
+    });
+    $('.kb-mobile-search__close').on('click',function() {
+      $('.kb-mobile-header').removeClass('search-open');
+    });
+  });
+</script>

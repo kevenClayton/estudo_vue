@@ -1,0 +1,232 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="{{ html_lang }}" {{ html_lang_dir }}> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="{{ html_lang }}" {{ html_lang_dir }}>        <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="{{ html_lang }}" {{ html_lang_dir }}>               <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="{{ html_lang }}" {{ html_lang_dir }}> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="author" content="{{ meta_author }}">
+    <meta name="description" content="{{ page_meta.meta_description }}">
+    <meta name="generator" content="HubSpot">
+    <title>{{ page_meta.html_title }}</title>
+    {% if site_settings.favicon_src %}<link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />{% endif %}
+    
+{{ standard_header_includes }}
+
+</head>
+<body class=" {{ builtin_body_classes }}" style="">
+    <div class="header-container-wrapper">
+    <div class="header-container container-fluid">
+
+
+    </div><!--end header -->
+</div><!--end header wrapper -->
+
+<div class="body-container-wrapper">
+    <div class="body-container container-fluid">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-1 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-raw_jinja " style="" data-widget-type="raw_jinja" data-x="0" data-w="12">
+{% image "background_image" label='Marquee Background Image',
+src='https://cdn2.hubspot.net/hubfs/2500081/Lander/Banner.jpg',
+export_to_template_context=True %}
+{% color "color_primary" label="Primary Color. Leave blank for the default value.",  color="", export_to_template_context=true, no_wrapper=true %}
+<style>
+    {%- if widget_data.color_primary.color|trim != "" -%}
+        {% set colorPrimary = widget_data.color_primary.color %}
+        a {
+            color: {{ colorPrimary }};
+        }
+        .hero,.testimonial {
+            background: {{ colorPrimary }}; 
+        }
+        .features h4 {
+          color: {{ colorPrimary }};
+        }
+    {%- endif -%}
+</style></div><!--end widget-span -->
+
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-2 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell navbar" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-3 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell container" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-4 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-logo " style="" data-widget-type="logo" data-x="0" data-w="12">
+<div class="cell-wrapper layout-widget-wrapper">
+{% logo "logo" alt='LandingPage.png', height=132, img={alt='LandingPage.png', height=132, override_inherited_src=True, src='https://cdn2.hubspot.net/hubfs/2500081/Lander/LandingPage.png', suppress_company_name=False, width=523}, img_alt='LandingPage.png', img_load_error=False, open_in_new_tab=False, original_height=132, original_width=523, override_inherited_src=True, overrideable=True, src='https://cdn2.hubspot.net/hubfs/2500081/Lander/LandingPage.png', suppress_company_name=False, width=523, label='Logo' %}</div><!--end layout-widget-wrapper -->
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+    </div><!--end body -->
+</div><!--end body wrapper -->
+
+<div class="footer-container-wrapper">
+    <div class="footer-container container-fluid">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-1 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell hero" style="background-image:url('{{ widget_data.background_image.src }}'); background-size: cover;" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-2 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell overlay" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-3 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell container" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-4 ">
+<div class="row-fluid ">
+<div class="span5 widget-span widget-type-rich_text " style="" data-widget-type="rich_text" data-x="0" data-w="5">
+<div class="cell-wrapper layout-widget-wrapper">
+{% widget_block rich_text "module_1485028613950108" overrideable=True, label='Rich Text' %}
+{% widget_attribute "html" %}<h1>3 Keys To The Perfect Landing Page</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>{% end_widget_attribute %}
+      {% end_widget_block %}
+</div><!--end layout-widget-wrapper -->
+</div><!--end widget-span -->
+<div class="span2 widget-span widget-type-space " style="" data-widget-type="space" data-x="5" data-w="2">
+<div class="cell-wrapper layout-widget-wrapper">
+{% space "module_1485028623068112" overrideable=True, label='Horizontal Spacer' %}</div><!--end layout-widget-wrapper -->
+</div><!--end widget-span -->
+<div class="span5 widget-span widget-type-cell hero-form" style="" data-widget-type="cell" data-x="7" data-w="5">
+
+<div class="row-fluid-wrapper row-depth-2 row-number-1 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget " style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+{% module_block module "module_1563213687682193" module_id=1155238, overrideable=True, path='@hubspot/form', per_widget_wrapper_html='', widget_name='Form', wrapping_html='', label='Form' %}
+          {% end_module_block %}
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-1 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell callout" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-2 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell container" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-3 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell middle" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-4 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget " style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+{% module_block module "module_156641151738099" wrapping_html='', per_widget_wrapper_html='', overrideable=True, widget_name='Rich Text', module_id=1155639, path='@hubspot/rich_text', label='Rich Text' %}
+      {% end_module_block %}
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-5 ">
+<div class="row-fluid ">
+<div class="span6 widget-span widget-type-rich_text " style="" data-widget-type="rich_text" data-x="0" data-w="6">
+<div class="cell-wrapper layout-widget-wrapper">
+{% widget_block rich_text "left_column" label='Left Column' %}
+{% widget_attribute "html" %}<h2>Landing Pages Are About More Than Great Design</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>{% end_widget_attribute %}
+      {% end_widget_block %}
+</div><!--end layout-widget-wrapper -->
+</div><!--end widget-span -->
+<div class="span6 widget-span widget-type-rich_text " style="" data-widget-type="rich_text" data-x="6" data-w="6">
+<div class="cell-wrapper layout-widget-wrapper">
+{% widget_block rich_text "module_156641149291880" label='Left Column' %}
+{% widget_attribute "html" %}<h2>Landing Pages Are About More Than Great Design</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>{% end_widget_attribute %}
+      {% end_widget_block %}
+</div><!--end layout-widget-wrapper -->
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-6 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell " style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-7 ">
+<div class="row-fluid ">
+<div class="span6 widget-span widget-type-custom_widget " style="" data-widget-type="custom_widget" data-x="0" data-w="6">
+{% module_block module "module_156322371366673" module_id=1847337, overrideable=False, path='@hubspot/horizontal_spacer', per_widget_wrapper_html='', widget_name='Horizontal Spacer', wrapping_html='', label='Horizontal Spacer' %}
+{% end_module_block %}
+
+</div><!--end widget-span -->
+<div class="span6 widget-span widget-type-custom_widget " style="" data-widget-type="custom_widget" data-x="6" data-w="6">
+{% module_block module "module_156633005070768" module_id=1155827, overrideable=True, path='@hubspot/follow_me', per_widget_wrapper_html='', widget_name='Follow Me', wrapping_html='', label='Follow Me' %}
+{% end_module_block %}
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-8 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-global_group " style="" data-widget-type="global_group" data-x="0" data-w="12">
+{% include '/generated_global_groups/10469937676.html' %}
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+    </div><!--end footer -->
+</div><!--end footer wrapper -->
+
+    {{ standard_footer_includes }}
+    
+    <!-- Generated by the HubSpot Template Builder - template version 1.03 -->
+</body>
+</html>

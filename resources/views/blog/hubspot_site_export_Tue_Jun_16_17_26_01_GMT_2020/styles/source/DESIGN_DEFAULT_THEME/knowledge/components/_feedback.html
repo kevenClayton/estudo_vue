@@ -1,0 +1,10 @@
+<div
+  id="ka-feedback-form-container"
+  portal-id="{{ content.portalId }}"
+  article-id="{{ content.id }}"
+  enviro="{{ environment }}"
+>
+  <div id="ka-feedback-form"></div>
+  <link rel="stylesheet" href="https://js.hubspotfeedback{{ "qa" if environment != 'prod' }}.com/feedbackknowledge.css" />
+  <script type="text/javascript" src="https://js.hubspotfeedback{{ "qa" if environment != 'prod' }}.com/feedbackknowledge.js"></script>
+</div>

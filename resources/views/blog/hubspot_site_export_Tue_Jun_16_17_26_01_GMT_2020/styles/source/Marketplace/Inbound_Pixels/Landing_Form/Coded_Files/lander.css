@@ -1,0 +1,201 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto:300,400,700,900|Montserrat:400,700';
+
+/**
+ * CSS @imports must be at the top of the file.
+ * Add them above this section.
+ */
+
+
+
+/* ==========================================================================
+   HS COS Boilerplate v1.3.0
+   ========================================================================== */
+
+/* This responsive framework is required for all styles. */
+{% include "hubspot/styles/responsive/required_base.css" %}
+{% include "hubspot_default/shared/responsive/theme-foundation-v1-0.css" %}
+{% include "hubspot/styles/responsive/hubtheme-modules.css" %}
+
+/* These includes are optional, but helpful. */
+{% include "hubspot/styles/patches/recommended.css" %}
+
+/* TYPOGRAPHY */
+{% set fontDefault             = "'Roboto', Helvetica, Sans-serif;" %}
+{% set fontHeading             = "'Montserrat', Helvetica, Sans-serif" %}
+
+/* SIZING */
+{% set maxWidth                = "1100px" %}
+{% set defaultSpacing          = "120px 0px" %}
+
+
+/* COLORS */
+{% set colorBody               = "#ffffff" %}
+{% set colorText               = "#222" %}
+{% set colorPrimary            = "#e24548" %}
+
+/* HELPERS */
+.offset {
+  background: {{ colorOffset }};
+}
+.text-center {
+  text-align: center;
+}
+.spacing {
+  padding: 3%;
+}
+
+/* GENERAL */
+body {
+  -webkit-font-smoothing: antialiased;
+  background: {{ colorBody }};
+  box-shadow: {{ boxShadow }};
+  line-height: 1.6;
+  font-weight:400;
+  color: {{ colorText }};
+  font-family: {{ fontDefault }};
+}
+.container {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 0 30px;
+  max-width: {{ maxWidth }};
+  float: none !important;
+}
+
+/* TYPOGRAPHY */
+a {
+  color: {{ colorPrimary }};
+  text-decoration:none;
+}
+h1,h2,h3,h4,h5,h6,p {
+  margin: .7rem 0;
+}
+h3,h4,h5,h6,a {
+  font-weight: 900;
+  font-family: {{ fontHeading }};
+}
+
+/* NAVBAR */
+.navbar {
+  padding: 15px 0;
+}
+.navbar a {
+  display: block;
+  line-height: 1;
+}
+
+/* HERO */
+.hero {
+  background: #000;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 100;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.hero .overlay {
+  background: rgba(0,0,0,.6);
+  padding: {{ defaultSpacing }};
+}
+.hero h1 {
+  font-size: 50px;
+  line-height: 1.2;
+}
+.hero-form {
+  background: rgba(0,0,0,.5);
+  padding: 30px 40px;
+  font-size: 1.1rem;
+}
+.hero-form img {
+  margin-bottom: 1rem;
+}
+.hero-form .hs-form-required {
+  display: none;
+}
+.hero-form .hs-button {
+  padding: 15px 10px;
+  background: {{ red }};
+  color: #fff;
+  display:block;
+  margin-top:14px;
+  text-align:center;
+  font-size:16px;
+  border:none;
+  display:block;
+  width:100%;
+  border-radius:2px;
+}
+
+.hero-form input[type="text"],.hero-form input[type="password"],.hero-form input[type="email"],.hero-form input[type="tel"], textarea, .hero-form select {
+  width: 100% !important;
+  display: block;
+  margin-bottom: 15px;
+  padding: 15px 10px;
+  border: none;
+  font-size: 16px;
+  border-radius: 2px;
+  height: 50px;
+  background: {{ colorOffset }};
+  color: #333333;
+}
+textarea {
+  height: 150px;
+}
+.hero-form ul, .hero-form ol {
+  list-style: none !important;
+  padding-left: 0;
+}
+.hero-form input[type="checkbox"],.hero-form input[type="radio"] {
+  margin-right: 10px;
+  width: auto !important;
+  display: inline;
+}
+
+/* CALLOUT */
+.callout {
+  padding: {{ defaultSpacing }};
+  font-size:0;
+}
+.callout a {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.callout .middle {
+  vertical-align: middle;
+  float: none;
+  display: inline-block;
+  font-size: 1rem;
+}
+
+/* FEATURES */
+.features {
+  padding: {{ defaultSpacing }};
+  background: #fcfaf8;
+  text-align: center;
+}
+.features img {
+  margin-bottom: .5rem;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+/* CTA */
+.cta {
+  background: {{ colorPrimary }};
+  padding: 100px 0;
+  text-align: center;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 50px 0;
+}
+
+/* RESPONSIVE STYLES */
+@media (max-width: 767px) {
+
+}

@@ -1,0 +1,52 @@
+<div class="kb-category-menu">
+  <ul>
+    {% for cat in category_organization.categories %}
+    <li 
+        {% if cat.id == selected_category_id %}
+        {% if selected_subcategory_id %}
+        class="open"
+        {% else %}
+        class="open active"
+        {% endif %}
+        {% endif %}   
+        > 
+      <a href="{{ "/" ~ rootSlug if rootSlug }}{{ cat.fullPath }}">
+        <div class="kb-category-menu-option" data-id="{{ cat.id }}">
+          <span class="kb-category-menu-option__color-bar" style="background-color: red;"></span>
+          {{ cat.name }}
+        </div>         
+        {% if cat.subcategories && cat.subcategories|length > 0 %}
+        <div>
+          <svg width="12" height="7" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10.6817 1.6816l-4.5364 4-4.5364-3.9315" stroke="{{ linksColor }}" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        {% endif %}
+      </a>  
+      <ul>
+        {% for subCat in cat.subcategories %}
+        <li 
+            {% if subCat.id == selected_subcategory_id %}
+            class="active"
+            {% endif %} data-id="{{ subCat.id }}"
+            >
+          <a href="{{ "/" ~ rootSlug if rootSlug }}/{{ subCat.fullPath|split('/')|join('#') }}">
+            <span class="kb-category-menu-option__color-bar" style="background-color: red;"></span>
+            {{ subCat.name }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+
+<script>
+  $(document).ready(function() {
+    $('.kb-category-menu svg').on('click', function(e) {
+      e.preventDefault();
+      $(this).closest('li').toggleClass('open');
+    });
+  });
+</script>

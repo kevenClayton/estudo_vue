@@ -1,0 +1,20 @@
+<div class="kb-index kb-index--cards {{ "kb-index--narrow" if homepage_organization.categories|length <= 4 }} {{ "kb-index--single" if homepage_organization.categories|length == 1 }}">
+  {% if theme_preview_mode && homepage_organization.categories|length == 0 %}
+    {% for idx in [1,2,3,4,5,6] %}
+      <div class="kb-index__category kb-index__category--3col kb-index__category-placeholder" />
+    {% endfor %}
+  {% else %}
+    {% for cat in homepage_organization.categories %}
+      <a id="kb-index__category-{{ cat.id }}" href="{{ "/" ~ knowledge_base.slug if knowledge_base.slug }}{{ cat.fullPath }}" class="kb-index__category-flex kb-index__category--3col">
+        <div class="kb-index__category-color" style="background-color:{{ cat.color }}" />
+        <div class="kb-index__category" data-preview-id="kb-index__category-{{ cat.id }}">
+          <h3>{{ cat.name }}</h3>
+          <div class="kb-index__category-description">
+            {{ cat.description }}
+          </div>
+          <span class="kb-index__see-all-link">{{ index_seeAllArticlesLink }}</span>
+        </div>
+      </a>
+    {% endfor %}
+  {% endif %}
+</div>

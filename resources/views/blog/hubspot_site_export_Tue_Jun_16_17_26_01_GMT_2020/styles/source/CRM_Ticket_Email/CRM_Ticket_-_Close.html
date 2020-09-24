@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <style type="text/css" id="hs-inline-css">
+      /*<![CDATA[*/
+      /* everything in this node will be inlined */
+      body {
+        font-family:{{primary_font}};
+        color:{{primary_font_color}};
+        font-size:{{primary_font_size}};
+      }
+
+      .footer a {
+        color:{{secondary_font_color}};
+      }
+      /*]]>*/
+    </style>
+  </head>
+
+  <body class="hs_plain_email">
+    {% content_attribute "email_body" %}
+    Hi {{ contact.firstname }},<br />
+    Your ticket {{ ticket.id }} has been closed. Thanks for contacting our support team. We hope that your issue has been resolved to your satisfaction. Please don’t hesitate to reach out if your issue isn't resolved.<br />
+    <br />
+    Request details<br />
+    {{ contact.firstname }} {{ contact.lastname }}<br />
+    {{ ticket.createdate }}<br />
+    {{ ticket.subject }}<br />
+    {{ ticket.content }}
+    {% end_content_attribute %}
+    <br/>
+		{% module "close_ticket_footer" module_id="2856154" label="can_spam_info" %}
+  </body>
+</html>

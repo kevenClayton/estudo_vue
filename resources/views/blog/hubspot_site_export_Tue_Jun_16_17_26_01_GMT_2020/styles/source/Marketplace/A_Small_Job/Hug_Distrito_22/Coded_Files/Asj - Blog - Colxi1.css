@@ -1,0 +1,2531 @@
+ 
+
+ /*  RESET DE CSS NATIVAS DE NAVEGADOR ************************************************ */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,    
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+    padding:0px !important;
+    margin:0px !important;
+    display:block !important;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Lists */
+ul, ol {
+    margin: 0 0 15px 20px;
+    padding: 0;
+}
+li {
+    line-height: 24px;
+}
+ul li {
+    line-height: 24px;
+    margin: 0;
+    padding: 0;
+}
+ul[style="list-style-type: disc;"] {
+    
+    color:#ffd500;
+}
+
+
+ /***********************************************/
+ /* CSS @imports must be at the top of the file */
+ /* Add them above this section                 */
+ /***********************************************/
+
+ /****************************************/
+ /* HubSpot Style Boilerplate            */
+ /****************************************/
+
+ /* This responsive framework is required for all styles. */
+ {% include "hubspot/styles/responsive/required_base.css" %}
+
+ /* These includes are optional, but helpful. */
+ {% include "hubspot/styles/responsive/modules.css" %}
+ {% include "hubspot/styles/patches/recommended.css" %}
+
+
+
+/* Definiciones Globales  ************************************************************************************* */
+
+/*** Imports: no funcionan: se debe incluir codigo en los headers **** /
+/***** @import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic); *******/
+/****** @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700); ********/
+
+
+body{
+    font-family: 'Lato', sans-serif;
+    color:#333333;
+    font-size:16px;
+    line-height:22px;
+    font-weight: 300;
+}
+
+a{
+    color:#f2c300;   
+    font-style: italic;
+    font-weight: 300;
+}
+
+a:hover{
+    color:#333333;
+}
+
+a.case{
+    color:#ffffff !important;   
+    font-weight: 300 !important;
+    font-style:normal !important;
+    text-decoration:none !important;
+}
+
+a.nosubrayar {
+    color:#333333 !important;   
+    font-weight: 300 !important;
+    font-style:normal !important;
+    text-decoration:none !important;
+}   
+
+h1{
+    font-size:24px;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 400;
+    line-height: 30px;
+    color:#333333;
+}
+
+h1.home {
+    font-family:lato, sans-serif !important; 
+    font-size: 48px !important; 
+    font-weight:300 !important; 
+    line-height:48px !important; 
+    font-style:italic !important;
+}
+
+h2{
+    font-size:18px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    line-height: 23px;
+    color:#333333;
+}
+
+h3{
+    font-size:16px !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 400 !important;
+    line-height: 20px !important;
+    color:#333333 !important;
+}
+
+h4{
+    font-size:14px !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 400 !important;
+    line-height: 18px !important;
+    color:#333333 !important;
+    margin:0px 0px 0.4em 0px !important;
+}
+
+h5{
+    font-size:12px !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 400 !important;
+    line-height: 15px !important;
+    color:#333333 !important;
+    margin:0px 0px 0.3em 0px !important;
+}
+
+h0 { 
+    margin-top:60px !important;
+    font-size:36px !important;
+    font-weight: 300 !important;
+    line-height: 44px !important;
+    color:#495b67 !important;
+    font-family: 'Lato', sans-serif !important;
+}
+
+strong{
+    font-weight: 500 !important;
+}
+
+blockquote{
+    font-family: 'Lato', sans-serif!important;
+    font-weight: 700;
+    padding: 0 20px;
+    font-size: 18px !important;
+    font-style: italic;
+    font-weight: 300;
+    margin-bottom: 0!important;
+    color: #f2c300;
+    line-height: 24px !important;
+}
+
+input:focus, select:focus, textarea:focus, button:focus { outline: none; }
+
+input[type="text"]{
+    height:40px;
+    padding:15px;
+    border:1px solid #efefef;
+    font-size:12px;
+}
+
+input[type="email"]{
+    height:40px;
+    padding:15px;
+    border:1px solid #efefef;
+    font-size:12px;
+}
+
+input[type="submit"]{
+    padding: 10px !important;
+    text-align: center !important;
+    border: 1px solid #efefef !important;
+    font-size: 14px !important;
+    background-color: #333 !important;
+    color: white !important;
+    font-weight: normal !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    border-radius: 8px !important;
+    font-family: 'Lato', sans-serif!important;
+    cursor:pointer;
+}
+
+input[type="submit"]:hover{ background-color:#ffd500 !important; color:black !important;}
+
+textarea{
+    font-size:12px;
+}
+
+
+/* PARCHES  ************************************************************************************* */
+
+[hidden]{ display: none; } /* Permite usar el atributo HIDDEN en navegadores infames (Internet Explorer y compañia) */
+ 
+.clear { clear: both; } /* Corrige el desmaquetado causado por los FLOATS */
+
+.row-fluid [class*="span"]{ min-height:0 !important; }  /* Elimina el min-height general impuesto por HubSpot */
+
+.hs-common-confirm-message {
+    background-color: #ffd500 !important;
+    color: black  !important;
+    font-size: 15px !important;
+    border-radius: 3px !important;
+    padding: 15px  !important;
+    margin-left: 30px !important;
+    margin-right: 30px !important;
+    margin-top: 30px !important;
+    margin-bottom: 30px !important;
+    border:none !important;
+}
+
+/* Clases Genericas ************************************************************************************* */
+
+.bg_gris {
+    background-color:#F8F8F8;
+}
+
+.margin_top50 { margin-top:50px !important; }
+
+.padding35{ padding: 25px !important;}
+
+.asj_default_caja {
+    background-color:#efefef;
+    border-radius:6px;
+    border:1px solid #efefef;
+    width:100%;
+}
+
+body:not(.hs-site-page) .asj_default_caja:before {
+    background-color:#ffd500;
+    width:30px;
+    height:10px;
+    border-top-left-radius:6px;
+    border-top-right-radius:6px;
+    content:" ";
+    position:absolute;
+    margin-top:-11px;
+    margin-left:30px;
+    
+}
+
+}
+
+.asj_default_caja a{
+    color:#333333;
+}
+
+.asj_default_caja h3{
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+.asj_default_caja li{
+    margin-top:5px;
+}
+
+.asj_default_caja ul{
+    margin-top:15px;
+}
+
+
+/* Estilos ASJ  ************************************************************************************* */
+
+.pagina_container {
+    max-width: 1200px !important;
+    margin-left:auto  !important;
+    margin-right:auto  !important;
+    float:none !important;
+}
+
+.asj_franja_gris{
+    background-color: #efefef;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.asj_franja_amarilla {
+    background-color: #ffd500;
+    width: 100%!important;
+    padding-bottom: 45px;
+}
+
+/* Header y Subheader */
+
+.asj_header { height: 100px !important; }
+.asj_header_logo{ margin-top:32px; width:215px !important; }
+.asj_header_logo_blanco{ margin-top:32px; width:250px !important; }
+
+.asj_header_menu{
+    text-align:right;
+    float: right !important;
+    margin-top: 33px;
+    
+    font-size:14px !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 400 !important;
+    line-height: 18px !important;
+    color:#333333 !important;    
+}
+
+.asj_header_menu a{ font-style:normal !important;font-size: 14px;}
+
+.asj_header_menu .hs-menu-wrapper.hs-menu-flow-horizontal > ul li a{ 
+    padding-right:0px !important; 
+    font-family: 'Lato',  sans-serif !important;
+
+}
+.asj_header_menu .hs-menu-wrapper.hs-menu-flow-horizontal > ul li a:hover{ text-decoration:underline; }
+
+.asj_header_menu a{ color:black; }
+
+
+
+
+.asj_subheader { height: 100px !important; }
+.asj_subheader h1 { 
+    margin-top:27px !important; 
+    font-size:36px !important;
+    font-weight: 300 !important;
+    line-height: 44px !important;
+    color:#333333 !important;
+    font-family: 'Lato', sans-serif !important;
+}
+.asj_subheader h3 {
+    margin-top:41px; 
+    text-align:right;
+    font-family: 'Lato', sans-serif !important;
+    font-weight: 300 !important;
+    }
+.asj_subheader_bkg {
+    background-color:#ffd500;
+    width:100% !important;
+}
+
+/* Sidebar Elements */
+
+
+.asj_sidebar_element{
+    margin-bottom:30px;
+}
+
+.asj_sidebar_element ul{
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 23px !important;
+}
+
+.asj_sidebar_element .widget-type-follow_me{
+    margin-top:20px;    
+    margin-bottom: 20px;
+}
+
+.asj_sidebar_element .widget-type-follow_me h3{
+    margin-bottom:10px;
+}
+
+.asj_sidebar_element .widget-type-follow_me a{
+    margin-right:12px;
+    
+}
+
+.asj_sidebar_newsletter{}
+.asj_sidebar_newsletter .widget-type-blog_subscribe label{ display:block; }
+.asj_sidebar_newsletter input[type="email"]{ 
+    margin-bottom:25px; }
+
+.asj_sidebar_newsletter .hs_cos_wrapper_type_raw_html h3{
+    
+        margin-bottom:10px;
+
+}
+
+.asj_sidebar_search{}
+.asj_sidebar_search  .hs-button{
+    cursor:pointer;
+    width: 38px;
+    height: 38px;
+    background-color: #333333;
+    display: block;
+    position: relative;
+    margin-top: -39px;
+    float: right;
+    background-image:url('http://blog.asmalljob.com/hs-fs/hub/416379/file-1331150606-png/recursos_imagenes_blog/botones/search.png');
+}
+.asj_sidebar_search .hs-button:hover{ background-image:url('http://blog.asmalljob.com/hs-fs/hub/416379/file-1335404625-png/recursos_imagenes_blog/botones/search_hover.png?fsg');}
+.asj_sidebar_search label{ 
+    font-size: 16px!important;
+    font-family: 'Montserrat',sans-serif!important;
+    font-weight: 400!important;
+    line-height: 20px!important;
+    color: #333!important;
+    margin-bottom:25px;
+    display:block; 
+}
+
+.asj_sidebar_cta{display:normal;}
+.asj_sidebar_cta *{
+    width:100%;
+    margin:auto;
+}
+
+
+/* Comments */
+
+.comment-from h4, .comment-from h4 a{ 
+    font-size:16px !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 700 !important;
+    line-height: 20px !important;
+    color:#333333 !important;
+    text-decoration:none;
+    font-style:normal;
+    text-decoration:none;
+    margin-bottom:0px !important;
+}
+
+.comment-from h4 a:hover{ color:#ffd500; }
+
+.comment-date{  font-size:16px !important;  font-weight: 300; }
+
+.comment-body{ 
+    margin-top:30px; 
+    margin-bottom:30px;
+    font-size:16px;
+}
+
+.comment-reply-to{
+    background: none!important;
+    padding: 0!important;
+    color: #ffd500!important;
+    font-size: 16px!important;
+    font-family: 'Lato',sans-serif!important;
+    border: none!important;
+    margin: 0!important;
+    text-decoration: underline;
+    font-style: italic;
+    cursor: pointer;
+    font-weight: 400;
+}
+
+#captcha_wrapper{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+div[class*='comment depth-']{
+    border-top: 1px solid #e1e1e1 !important;
+    padding-top: 30px !important;
+    margin-top: 30px !important;
+}
+
+
+.new-comments .hs-form{
+    margin-top: 30px;
+    background-color: #efefef;
+    padding: 30px;
+    border-radius: 5px; 
+    margin-bottom:30px;
+}
+
+.new-comments .hs-form input , .new-comments textarea{  border-radius:5px;  border:1px solid #e0e0e0; }
+
+.new-comments .hs-form input[type="checkbox"]{ width:auto !important; }
+
+.new-comments .hs-form fieldset{ max-width:none !important;}
+
+.new-comments .hs_firstName, .new-comments  .hs_lastName , .new-comments  .hs_email, .new-comments  .hs_website { margin-bottom:15px; }
+
+.new-comments .hs-form label{
+    font-size:12px !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 400 !important;
+    line-height: 15px !important;
+    color:#333333 !important;
+    display:block;
+    margin-bottom:10px;
+}
+
+.new-comments  .hs-input{ width:100% !important; padding:15px;}
+
+/* Content */
+
+.asj_content_container {
+    background-color:white;
+    border:1px solid grey;
+    border-top-left-radius:6px;
+    border-top-right-radius:6px;
+
+}
+
+.blog-post-wrapper:before{
+    background-color:#ffd500;
+    width:30px;
+    height:10px;
+    border-top-left-radius:6px;
+    border-top-right-radius:6px;
+    content:" ";
+    position:absolute;
+    margin-top:-10px;
+    margin-left:30px;
+}
+
+.blog-post-wrapper .hs_cos_wrapper_type_linked_image img{  border-radius:6px; }
+
+.post-header{
+    padding-top: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f3f3f3;
+    margin-bottom: 30px;
+}
+
+
+.asj_post_body{
+    line-height: 23px;
+    font-weight: 300;
+}
+
+.asj_post_body_meta{
+    text-align:right;
+    font-size:13px;
+    line-height: 18px;
+    padding-top:3px;
+}
+
+.asj_post_body_meta_block{
+    margin-bottom:50px;
+}
+
+.asj_post_body_meta h3{
+    margin-bottom:5px;
+    font-style: normal;
+}
+
+.asj_post_body_meta_block .hs-blog-social-share .hs-blog-social-share-list .hs-blog-social-share-item{
+    float:none !important;
+    margin-right:0px !important;
+    margin-bottom:5px;
+}
+
+.asj_post_body_meta_block .hs-blog-social-share #___plusone_0 iframe{
+    width: 57px !important;
+    margin-top:5px !important;
+}
+
+.asj_author_wrapper{
+    margin-top:30px;
+    padding-top:30px;
+    border-top:1px solid #e8e8e8;
+}
+
+.asj_author_avatar_container , .asj_author_meta_container{
+    display:inline-block;    
+}
+.asj_author_avatar_container{width: 150px !important;}
+
+.asj_author_avatar{
+    width:100% !important;
+    height:100% !important;
+}
+
+.asj_author_meta_name{
+    margin-bottom:15px;
+}
+
+.asj_author_meta_name a{
+    font-size:16px !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 400 !important;
+    line-height: 20px !important;
+    color:#f2c300 !important;
+    text-decoration:none;
+    font-style:normal;
+}
+
+.asj_author_meta_bio{
+    margin-bottom: 15px;
+    font-size: 13px;
+    text-align: left;  
+    line-height:18px;
+}
+
+
+
+@media screen{
+    
+    
+    p {
+    margin: 0px 0px 5px 0px !important;
+    }
+}
+ 
+/* ********* Vista POST LISTING:  Item ********** */
+
+.asj_post_listing_item{
+    border-bottom: 1px solid #efefef;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+}
+
+.asj_post_listing_item .span4{ margin-left:0px !important;}
+
+.asj_post_listing_item > h1{ margin-bottom: 25px; }
+
+.asj_post_listing_item > h1 a{
+    color: #333333;
+    text-decoration: none;
+    font-style:normal !important;
+
+}
+
+.asj_post_listing_author{
+    padding-bottom: 15px;
+    border-bottom: 1px solid #efefef;
+    margin-bottom: 20px;
+    padding-top: 10px;
+}
+
+.asj_post_listing_author a{
+    font-size: 16px!important;
+    font-family: 'Montserrat',sans-serif!important;
+    font-weight: 400!important;
+    line-height: 20px!important;
+    color: #f2c300!important;
+    text-decoration: none;
+    font-style: normal;
+}
+
+.asj_post_listing_date{
+    margin-bottom: 20px;
+    border-bottom: 1px solid #efefef;
+    padding-bottom: 20px;
+    color: #333;
+    font-size: 14px;
+}
+
+.asj_post_listing_previa{
+    font-weight: 300;
+}
+.asj_post_listing_date > img{
+    width: 25px;
+    margin-right: 5px;
+}
+
+.asj_post_listing_read_more{
+    background-color: #efefef;
+    padding: 4px 30px;
+    border-radius: 6px;
+    display: inline-block;
+    color: #333;
+    cursor: pointer;
+    font-style:normal;
+}
+
+.asj_post_listing_read_more:hover{
+    background-color: #333333;
+    color: #efefef;
+}
+
+
+.asj_post_listing_comments_count{   
+    display: inline-block;
+    float: right;
+    padding-top: 10px;
+    font-size: 13px;
+    color: #f2c300;
+    padding-top: 5px;
+}
+
+.asj_author_wrapper_listing{
+    border-bottom:1px solid #efefef;
+    margin-bottom:30px;
+    padding-bottom:30px;
+    margin-top: 0px;
+}
+
+
+.asj_listing_navigation{
+    border-bottom: 1px solid #efefef;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+}
+
+.asj_listing_navigation a{
+    font-style:normal;
+    text-decoration:none;
+    color:#333333;
+}
+
+.asj_listing_navigation .previous-posts-link{ float:left; }
+
+.asj_listing_navigation .next-posts-link{ float:right; }
+
+/* ******* FOOTER ****** */
+.asj_footer{
+    background-color: #efefef;
+    padding-top: 30px;
+    padding-bottom: 45px;
+    margin-top: 60px;
+}
+
+.asj_footer_widget_1, .asj_footer_widget_2, .asj_footer_widget_3{
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.asj_footer_widget_1 a, .asj_footer_widget_2 a, .asj_footer_widget_3 a{
+    color:#333333;
+}
+
+.asj_footer_widget_1 h3, .asj_footer_widget_2 h3{ margin-bottom:20px; }
+
+
+.asj_footer_widget_3 img{  margin-right:30px;}
+
+.asj_franja_amarilla_footer{
+    background-color:#ffd500;
+    height:60px;
+    width:100%;
+}
+
+.asj_franja_amarilla_footer2{
+    background-color:none;
+    height:60px;
+    width:100%;
+}
+
+.asj_franja_amarilla_footer .asj_disclaimer{
+     text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+.asj_franja_amarilla_footer, .asj_franja_amarilla_footer a{ 
+    color: #444444 !important;
+    text-decoration:none;
+}
+  
+.hs-menu-children-wrapper{
+    background-color: #efefef;
+    padding: 10px;
+    text-align: left;
+}
+
+.custom-menu-primary-blanco .hs-menu-children-wrapper{
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px !important;
+    text-align: left;
+}
+
+
+
+#hs_menu_wrapper_module_14063780051824 ul li:nth-child(3) ul {
+
+}
+
+.hs-menu-children-wrapper u{
+    padding-left:10px;
+    text-decoration:none;
+    color:#818181;
+}
+
+
+/* CREADO GERARD H1 LEGAL = QUE H1 LANDING-PAGE */
+
+.legal-page h1{
+    font-size: 40px !important;
+    font-family: 'Lato',sans-serif !important;
+    line-height: 50px !important;
+    font-weight: 300 !important;
+    color: #495b67 !important;
+    text-align: center !important;
+    margin-bottom: 50px !important;
+    margin-top:40px;
+}
+
+/* LANDINGS */
+
+
+.hs-landing-page {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width:1080px;
+}  
+
+.hs-landing-page .section-header h1{
+    font-size: 40px !important;
+    font-family: 'Lato',sans-serif !important;
+    line-height: 50px !important;
+    font-weight: 300 !important;
+    color: #495b67 !important;
+    text-align: center !important;
+    margin-bottom: 50px !important;
+    margin-top:40px;
+}
+
+.hs-landing-page .section-header h1 strong, .hs-landing-page .section-header h1 b{
+    font-weight: 700;
+}
+
+.hs-landing-page .layout-widget-wrapper{
+    color: rgb(51, 51, 51) !important;
+    font-family: Lato,  sans-serif !important;
+    font-size: 16px !important;
+    line-height: 22px !important;
+}
+
+.hs-landing-page .layout-widget-wrapper .flotante{
+    float: right;
+    min-width:261px;
+    text-align: right;
+}
+
+.hs-landing-page .body-container .layout-widget-wrapper :not(.widget-module) > ul{
+    list-style: square url('http://blog.asmalljob.com/hs-fs/hub/416379/file-1589445144-png/recursos_imagenes_blog/botones/transparent-yellow-checkmark-md-624735-edited-537228-edited.png');
+    margin-left: 20px;
+    line-height: 30px;
+    list-style-position: inside;
+}
+
+.hs-landing-page .body-container .layout-widget-wrapper :not(.widget-module) > ul h4{    display:inline-block; }
+
+.hs-landing-page .widget-type-form select, .hs-landing-page .widget-type-form  input{
+    width: 100%;
+    height: 30px;
+    border: 0;
+    padding-left: 10px;
+    background: white;
+    opacity: 1;
+    border-radius: 0px;
+}
+
+.hs-landing-page .widget-type-form select, .hs-landing-page .widget-type-form  input[type=radio]{
+    width: auto;
+    height: auto;
+}
+
+.hs-landing-page .widget-type-form select{
+    -webkit-appearance: none;
+     -moz-appearance:menulist-textfield;
+    background-repeat: no-repeat;
+    background-image: url("http://blog.asmalljob.com/hs-fs/hub/416379/file-1552706023-png/recursos_imagenes_blog/botones/arrow_down.png");
+    background-repeat: no-repeat;
+    background-position: 97% center;
+    font-size:12px;
+    width: 100%;
+
+}
+
+.hs-landing-page .widget-type-form .actions input{
+    margin-left: 0!important;
+    border: none!important;
+    margin-top: 30px!important;
+    margin-bottom: 0px!important;
+    cursor: pointer!important;
+    color: white!important;
+    background-color: #333!important;
+    height: 40px;
+    font-family: 'Lato', sans-serif!important;
+}
+
+.hs-landing-page #hs_cos_wrapper_main_form .actions input:hover {
+    background-color: #ffd500!important;
+    color: black!important;
+}
+
+.hs-landing-page  .widget-type-cell{
+    padding:0px !important;
+    margin-bottom:40px!important;
+}
+
+.hs-landing-page  footer{
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    background-color: #ffd500;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 0px;
+    font-size: 12px;
+}
+ 
+.widget-type-form {
+    border-radius: 4px !important;
+    font-size: 14px !important;
+    font-weight: normal !important;
+    padding: 30px !important;
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    
+    line-height: 28px !important;
+    background-color: #f5e343 !important;
+    text-align: left !important;
+    display: block !important;
+    background-image: none !important;
+}
+
+.widget-type-form ul{
+    list-style-image: none !important;
+    list-style-position: inside !important;
+    list-style-type: none !important;
+}
+
+.widget-type-form  .hs-form-field{
+    margin-top:15px;
+}
+
+/*DESACTIVADO TEMPORALMENTE SPAN4*/
+/*body:not(.hs-site-page) .span4:before{*/
+body:not(.hs-site-page):before {
+    background-color:#ffd500;
+    width:30px;
+    height:10px;
+    border-top-left-radius:6px;
+    border-top-right-radius:6px;
+    content:" ";
+    position:absolute;
+    margin-top:-10px;
+    margin-left:30px;
+}
+
+
+
+/**
+ * Special Note
+ *
+ * When the menu is open, a class of .mobile-open is applied to the body. You can 
+ * use this for custom styling on any element when the menu is in the open position.                     
+ */
+
+
+@media (max-width:1200px) and (min-width: 768px){
+  #hs_menu_wrapper_module_14063780051824{ margin-right:25px !important;}
+  .asj_header_logo{ margin-left:20px !important;}
+
+}
+    
+@media (min-width: 768px){
+
+  a.mobile-trigger, a.child-trigger {
+      display: none !important; /* Hide button on Desktop */
+  }
+  
+  #hs_menu_wrapper_module_14063780051824{ display:block !important;}
+
+}
+
+@media (max-width: 767px){
+
+  /* Variables
+     ========================================================================== */
+
+  {% set menuColorMobile = "#333" %}   /* Set Mobile Menu Background Color */
+  {% set aColorMobile = "white" %}      /* Set Link Color */
+  {% set aColorHoverMobile = "white" %} /* Set Link Hover Color */
+
+
+
+  /* Menu Reset - Remove styling from desktop version of custom-menu-primary */
+  /* Place any additional CSS you want removed from the mobile menu in this reset */
+  .custom-menu-primary, .custom-menu-primary *{
+    display: block;
+    float: none;
+    position: static;
+    top: auto;
+    right: auto;
+    left: auto;
+    bottom: auto;
+    padding: 0px;
+    margin: 0px;
+    background-image: none;
+    background-color: transparent;
+    border: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow:    none;
+    box-shadow:         none; 
+    max-width: none;
+    width: 100%;
+    height: auto;
+    line-height: 1;  
+    font-weight: normal;
+    text-decoration: none;
+    text-indent: 0px;
+    text-align: left;
+    color: {{aColorMobile}};
+    }
+
+
+  /* Toggle Button
+     ========================================================================== */
+
+  a.mobile-trigger {
+    display: inline-block!important;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 25px;
+    height: auto;
+    padding: 12px 10px;
+    background: #000;
+    z-index: 99999999999;
+    -webkit-transition: background-color .2s linear;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: left;
+    text-transform: uppercase;
+    border-radius: 6px;
+    -webkit-transition: color .2s ease-in;
+    -moz-transition: color .2s ease-in;
+    transition: color .2s ease-in;
+ }
+
+  a.mobile-trigger:hover {
+      text-decoration: none; /* Removes link text underline on button */
+      color: {{ aColorHoverMobile }};
+  }
+
+  a.mobile-trigger span{
+      display: inline;
+  }
+
+  a.mobile-trigger span:before{
+      position: absolute;
+      content: ''; /* Change the text on the closed toggle button */
+  }
+
+  a.mobile-trigger span:after{
+      position: relative;
+      right: 2px;
+      content: ''; /* Change the text on the open toggle button */
+      background-color: {{ menuColorMobile }};
+      opacity: 0;
+      transition: opacity .4s ease-in-out;
+      -moz-transition: opacity .4s ease-in-out;
+      -webkit-transition: opacity .4s ease-in-out; 
+  }
+
+  /* Change button when menu is open */
+  .mobile-open a.mobile-trigger{
+      -webkit-transition:background-color 0.2s linear; /* Button color transition effect */
+      -moz-transition:background-color 0.2s linear; /* Button color transition effect */
+      transition:background-color 0.2s linear; /* Button color transition effect */
+      background: transparent; /* Changes button background to be slightly darker than open menu color */  
+  }
+
+  .mobile-open a.mobile-trigger span:after{
+     opacity: 1; 
+  }
+
+
+  /* Toggle Button Icon & Animations
+     ========================================================================== */
+
+  a.mobile-trigger i {
+      display: inline;
+      position: relative;
+      top: -5px;
+      margin-left: 5px;
+      -webkit-transition-duration: 0s;
+      -webkit-transition-delay: .2s;
+      -moz-transition-duration: 0s;
+      -moz-transition-delay: .2s;
+      transition-duration: 0s;
+      transition-delay: .2s;
+  }
+  a.mobile-trigger  i:before, a.mobile-trigger i:after {
+      position: absolute;
+      content: '';
+  }
+  a.mobile-trigger  i, a.mobile-trigger  i:before, a.mobile-trigger  i:after {
+      width: 15px; /* Icon line width */
+      height: 2px; /* Icon line height */
+      background-color: {{ aColorMobile }}; /* Icon color */
+      display: inline-block;
+  }
+  a.mobile-trigger  i:before {
+      margin-top: -6px; /* Position top line */
+      -webkit-transition-property: margin, -webkit-transform;
+      -webkit-transition-duration: .2s;
+      -webkit-transition-delay: .2s, 0;
+  }
+  a.mobile-trigger  i:after {
+      margin-top: 6px; /* Position bottom line */
+      -webkit-transition-property: margin, -webkit-transform;
+      -webkit-transition-duration: .2s;
+      -webkit-transition-delay: .2s, 0;
+  }
+  .mobile-open a.mobile-trigger i {
+      background-color: rgba(0,0,0,0.0);
+      -webkit-transition-delay: .2s;
+      -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0);
+      -moz-box-shadow:    0px 1px 1px rgba(0, 0, 0, 0);
+      box-shadow:         0px 1px 1px rgba(0, 0, 0, 0);
+  }
+  .mobile-open a.mobile-trigger i:before {
+      margin-top: 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+      -webkit-transition-delay: 0, .2s;
+      -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0);
+      -moz-box-shadow:    0px 1px 1px rgba(0, 0, 0, 0);
+      box-shadow:         0px 1px 1px rgba(0, 0, 0, 0);
+  }
+  .mobile-open a.mobile-trigger i:after {
+      margin-top: 0;
+      -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      -webkit-transition-delay: 0, .2s;
+      -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0);
+      -moz-box-shadow:    0px 1px 1px rgba(0, 0, 0, 0);
+      box-shadow:         0px 1px 1px rgba(0, 0, 0, 0);
+  }
+
+  /* Child Toggle Button
+     ========================================================================== */
+
+  a.child-trigger {
+      display: block !important; /* Hide button on Desktop */
+      cursor: pointer; /* Mouse pointer type on hover */
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      width: 55px !important; /* Button width */
+      min-width: 55px !important;
+      height: 45px; /* Button height */  
+      padding: 0 !important;
+      border-left: 1px dotted rgba(255, 255, 255, .20);
+      border-bottom: 1px dotted rgba(255,255,255,.15);
+  }
+  a.child-trigger:hover {
+      text-decoration: none;
+  }
+
+
+  /* Child Toggle Button Icon & Animations
+     ========================================================================== */
+
+  a.child-trigger span {
+      position: relative;
+      top: 50%; /* Centers icon inside button */
+      margin: 0 auto !important;
+      -webkit-transition-duration: .2s;
+      -moz-transition-duration: .2s;
+      transition-duration: .2s;
+  }
+  a.child-trigger span:after {
+      position: absolute;
+      content: '';
+  }
+  a.child-trigger span, a.child-trigger span:after {
+      width: 10px; /* Icon line width */
+      height: 1px; /* Icon line height */
+      background-color: {{ aColorMobile }}; /* Icon color */
+      display: block;
+  }
+  a.child-trigger span:after {
+      -webkit-transform: rotate(-90deg);
+       -ms-transform: rotate(-90deg);
+      transform: rotate(-90deg);
+       -webkit-transition-duration: .2s;
+       -moz-transition-duration: .2s;
+      transition-duration: .2s;
+  }
+  a.child-trigger.child-open span:after {
+      -webkit-transform: rotate(-180deg);
+       -ms-transform: rotate(-180deg);
+      transform: rotate(-180deg);
+       -webkit-transition-duration: .2s;
+       -moz-transition-duration: .2s;
+      transition-duration: .2s;
+  }
+  a.child-trigger.child-open span {
+      -webkit-transform: rotate(180deg);
+       -ms-transform: rotate(180deg);
+      transform: rotate(180deg);
+       -webkit-transition-duration: .2s;
+       -moz-transition-duration: .2s;
+      transition-duration: .2s;
+  }
+
+    
+  /* Menu Styles on Mobile Devices
+     ========================================================================== */  
+
+
+  /* Hide menu on mobile */
+  .custom-menu-primary.js-enabled .hs-menu-flow-horizontal,
+  .custom-menu-primary.js-enabled .hs-menu-children-wrapper{
+      display: none;
+  }  
+
+  /* Make child lists appear below parent items */
+  .custom-menu-primary ul.hs-menu-children-wrapper {
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: static !important;
+    display: none;
+    margin-top: -20px;
+    margin-bottom: 10px;
+  }
+
+  /* Mobile Menu Styles */
+  .custom-menu-primary.js-enabled .hs-menu-flow-horizontal{
+      position: absolute; /**************************************************************/
+      top: 0;             /* Positions the menu to drop from the very top of the screen */
+      left: 0px;          /**************************************************************/                                              
+      width: 100%;   
+      -webkit-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.65);
+      -moz-box-shadow:    0px 5px 5px 0px rgba(0, 0, 0, 0.65);
+      box-shadow:         0px 5px 5px 0px rgba(0, 0, 0, 0.65); 
+  }
+  .custom-menu-primary .hs-menu-flow-horizontal{
+      padding: 55px 0 0 0; /* Padding to add room for close button */
+      background-color: {{ menuColorMobile }}; /* Menu background color set off global mobile-menuColor variable */
+      width: 100%; /* Full screen width */
+      z-index: 8888;
+  }
+
+   /* Level 1 Menu List Styles */
+  .custom-menu-primary .hs-menu-flow-horizontal > ul > li{
+      position: relative;
+   }
+  .custom-menu-primary .hs-menu-flow-horizontal > ul > li a{
+      font-size: 22px; /* Font size of top level list items */
+      line-height: 45px;
+
+      overflow: visible;
+  }
+  
+
+
+  /* Level 1 and Higher Menu List Styles */
+  .custom-menu-primary .hs-menu-flow-horizontal ul li{
+  }
+  
+  .custom-menu-primary .hs-menu-flow-horizontal ul li a{
+      padding: 0 10px;
+      color:white;
+      font-size:17px;
+  }
+  .custom-menu-primary .hs-menu-flow-horizontal ul li a:hover{
+      color: {{ aColorHoverMobile }}; /* link hover color set by global mobile-aColorHover variable */
+  }
+
+  /* Level 2 and Higher Menu List Styles */
+  .custom-menu-primary .hs-menu-flow-horizontal > ul ul li{
+     background-color: rgba(255, 255, 255, .08);
+  }
+  .custom-menu-primary .hs-menu-flow-horizontal > ul ul li a{
+      text-indent: 10px; /* Indent Child lists */
+      font-size: 16px; /* Font size of child lists */
+  }
+
+  /* Level 3 and Higher Menu List Styles */
+  .custom-menu-primary .hs-menu-flow-horizontal > ul ul ul li a{
+      text-indent: 30px; /* Indent Child lists */
+  }
+  .custom-menu-primary .hs-menu-flow-horizontal > ul ul ul ul li a{
+      text-indent: 50px; /* Indent Child lists */
+  }
+
+
+
+.hs-menu-wrapper.hs-menu-flow-horizontal>ul li.hs-item-has-children:hover>ul.hs-menu-children-wrapper{
+    background-color:#333;
+}
+
+.custom-menu-primary .hs-menu-flow-horizontal>ul ul li{
+    background-color:transparent !important;
+    height:35px;
+}
+
+.custom-menu-primary .hs-menu-flow-horizontal>ul ul li a{
+    overflow:visible !important;
+}
+
+
+.custom-menu-primary ul:first-child{
+    border-top: 1px dotted rgba(255,255,255,.35);
+
+}
+.hs-menu-wrapper.hs-menu-flow-horizontal>ul li.hs-item-has-children ul.hs-menu-children-wrapper li a{
+      
+}
+
+.hs-menu-wrapper.hs-menu-flow-horizontal>ul li.hs-menu-depth-1{
+    border-bottom: 1px dotted rgba(255,255,255,.35);
+}
+
+.custom-menu-primary u{
+    color: rgb(129, 129, 129);
+    padding-left: 30px;
+    padding-top: 15px;
+}
+
+.custom-menu-primary ul li:nth-child(3) ul{
+
+}
+
+}
+
+
+
+/****************************************/
+.hs-landing-page #hs_cos_wrapper_logo{
+    display:block;
+    margin-top:32px; 
+    width:215px !important;
+}
+
+.hs-landing-page .capsula-gris{
+    margin-top:30px !important;
+    margin-bottom:30px !important;
+}
+
+
+.hs-landing-page .widget-type-post_filter a{
+    color: #333;
+    font-style: italic;
+    font-weight: 100;
+    margin-top: 5px;
+    display: block;
+}
+
+.hs-landing-page #hs_cos_wrapper_module_1405436518077560 .field  input{
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.hs-landing-page .widget-type-blog_subscribe:before , .hs-landing-page  .widget-type-post_filter:before{
+    background-color:#ffd500;
+    width:30px;
+    height:10px;
+    border-top-left-radius:6px;
+    border-top-right-radius:6px;
+    content:" ";
+    position:absolute;
+    margin-top: -40px;
+    margin-left: 0px;
+}
+
+.hs-landing-page .hs-form fieldset.form-columns-1 .hs-input{
+    width: 100%;
+}
+
+.hs-landing-page #hs_cos_wrapper_social_sharing{
+    padding-bottom: 50px;
+    display: block;  
+}
+
+
+
+/* TEST SERVICIOS FULL WIDTH BG*/
+
+.full-width-bg-cyclone{
+               height:590px;
+               background-image: url ('http://www.asmalljob.com/hs-fs/hub/416379/file-2095316826-mp4/Acerca_De_Img/Test-VideoSlider-Cyclone3.mp4');
+               background-repeat: no-repeat;
+               background-position: center; 
+               background-attachment:fixed;
+}
+
+.full-width-bg-streetmarketing{
+               height:350px;
+               background-position:center center;
+            background-attachment:fixed;
+             background-repeat:no-repeat;
+             background-size:cover;
+             background-image: url ('http://www.asmalljob.com/hs-fs/hub/416379/file-2132038230-jpg/Paginas_de_Servicios/Streetmkt/tricycle-4-C-DEF.jpg');
+
+}
+
+.full-width-bg-inbound{
+               height:450px;
+               background-position: 17% 35%;
+            /*background-attachment:fixed;*/
+             background-repeat:no-repeat;
+             background-size:cover;
+             background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)),url('http://cdn2.hubspot.net/hubfs/416379/inbound%20marketing.png');
+
+}
+
+.full-width-bg-event{
+               height:350px;
+               background-position:center center;
+            background-attachment:fixed;
+             background-repeat:no-repeat;
+             background-size:cover;
+             background-image: url ('http://www.asmalljob.com/hs-fs/hub/416379/file-2585034834-jpg/Paginas_de_Servicios/Event/Event_portada.jpg');
+
+}
+
+
+.full-width-bg-formacion{
+               height:450px;
+               background-position:center center;
+            background-attachment:fixed;
+             background-repeat:no-repeat;
+             background-size:cover;
+             background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url ('http://cdn2.hubspot.net/hubfs/416379/50805934_l.jpg');
+
+}
+
+.pagina_container_servicios {
+    max-width: 1080px !important;
+    margin-left:auto  !important;
+    margin-right:auto  !important;
+    float:none !important;
+}
+
+.pagina_container_servicios2015 {
+
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.6);
+    max-width: 1080px !important;
+    margin-left:auto  !important;
+    margin-right:auto  !important;
+    float:none !important;
+}
+
+.pagina_container_serviciosvideo2015{
+
+    
+    max-width: 1080px !important;
+    margin-left:auto  !important;
+    margin-right:auto  !important;
+    float:none !important;
+}
+
+.pagina_container_serviciosnov2015 {
+
+
+    max-width: 1080px !important;
+    margin-left:auto  !important;
+    margin-right:auto  !important;
+    float:none !important;
+}
+
+
+.full-width-bg-canvas{
+             height:500px;
+             background-position:center center;
+             background-repeat:no-repeat;
+             background-size:cover;
+             background-image: url ('http://www.asmalljob.com/hubfs/portada-canvas-1.jpg');
+
+}
+
+.full-width-bg-canvaslicense{
+             max-height:2000px !important; 
+             background-position:center center;
+             background-repeat:no-repeat;
+             background-size:cover;
+             background-image: url ('http://www.asmalljob.com/hubfs/portada-canvas-1.jpg');
+
+}
+
+
+/* TEST BACKGROUND */
+
+.full-width-bg{
+               height:860px;
+               background-image: url ('http://blog.asmalljob.com/hs-fs/hub/416379/file-1795748976-jpg/Acerca_De_Img/1-shadow.jpg');
+               background-repeat: no-repeat;
+               background-position: center; 
+}
+.full-width-bg1{
+               height:860px;
+               background-image: url ('http://blog.asmalljob.com/hs-fs/hub/416379/file-1793105383-jpg/Acerca_De_Img/2-shadow.jpg');
+               background-repeat: no-repeat;
+               background-position: center; 
+}
+
+.full-width-bg2{
+               height:860px;
+               background-image: url ('http://blog.asmalljob.com/hs-fs/hub/416379/file-1796460161-jpg/Acerca_De_Img/3.jpg');
+               background-repeat: no-repeat;
+               background-position: center; 
+}
+
+.full-width-bg3{
+               height:860px;
+               background-image: url ('http://blog.asmalljob.com/hs-fs/hub/416379/file-1805671561-jpg/Acerca_De_Img/4-shadow-gris2.jpg');
+               background-repeat: no-repeat;
+               background-position: center; 
+}
+
+.full-width-bg4{
+               height:1000px;
+               background-image: url ('http://blog.asmalljob.com/hs-fs/hub/416379/file-1794468578-jpg/Acerca_De_Img/5-amarillo-1000px.jpg');
+               background-repeat: no-repeat;
+               background-position: center; 
+               padding:10px;
+}
+
+.full-width-bg5{
+               height:860px;
+               background-image: url ('http://blog.asmalljob.com/hs-fs/hub/416379/file-1794919384-jpg/Acerca_De_Img/6-shadow2.jpg');
+               background-repeat: no-repeat;
+               background-position: center; 
+}
+
+.full-width-bg6{
+               height:860px;
+               background-image: url ('http://blog.asmalljob.com/hs-fs/hub/416379/file-1868129685-jpg/Acerca_De_Img/Acerca-de-8-traje.jpg');
+               background-repeat: no-repeat;
+               background-position: center; 
+}
+
+.full-width-bg7{
+               height:860px;
+               background-image: url ('http://blog.asmalljob.com/hs-fs/hub/416379/file-1806241605-jpg/Acerca_De_Img/8-Caso.jpg');
+               background-repeat: no-repeat;
+               background-position: center; 
+}
+.full-width-bg9{
+               height:860px;
+               background-image: url ('http://www.asmalljob.com/hs-fs/hub/416379/file-2417926229-jpg/IMGs_WEB/content-experience-a-small-job.jpg');
+               background-repeat: no-repeat;
+               background-position: center; 
+}
+.h-acerca-de {
+                color:#FFFFFF !important;
+                font-size:60px !important;
+                font-family: 'Montserrat', sans-serif !important;
+                font-weight: 700 !important;
+                line-height: 70px !important;
+                text-shadow: 2px 2px 10px #000000 !important;
+
+}
+
+.h-acerca-de-2 {
+                color:#FFFFFF !important;
+                font-size:24px !important;
+                font-family: 'Montserrat', sans-serif !important;
+                font-weight: 400 !important;
+                line-height: 30px !important;
+                text-shadow: 2px 2px 5px #000000 !important;
+                text-align: center !important;
+                margin-top:-10px;
+}
+
+.h-acerca-de-3-doble {
+                color:#FFFFFF !important;
+                font-size:24px !important;
+                font-family: 'Montserrat', sans-serif !important;
+                font-weight: 400 !important;
+                line-height: 30px !important;
+                text-shadow: 2px 2px 5px #000000 !important;
+                text-align: center !important;
+                padding-left:80px;
+                padding-right:80px;
+}
+
+.h-acerca-de-amarillo {
+                color:#000000 !important;
+                font-size:60px !important;
+                font-family: 'Lato', sans-serif !important;
+                line-height: 62px !important;
+                text-align: center !important;
+}
+
+.h-acerca-de-franja {
+                color:#000000 !important;
+                font-size: 24px !important;
+                font-family; 'Lato', sans-serif !important;
+                line-height: 30px !important;
+                text-align: center !important;
+                padding-top:75px;
+                padding-bottom:75px;
+    
+}
+
+.h-acerca-de-franja-larga {
+                color:#000000 !important;
+                font-size: 24px !important;
+                font-family; 'Lato', sans-serif !important;
+                line-height: 30px !important;
+                text-align: center !important;
+                padding-top:500px;
+                padding-bottom:500px;
+    
+}
+
+.h-acerca-de-franja-larga-logos {
+                color:#000000 !important;
+                font-size: 24px !important;
+                font-family; 'Lato', sans-serif !important;
+                line-height: 30px !important;
+                text-align: center !important;
+                padding-top:300px;
+                padding-bottom:50px;
+    
+}
+
+.h-acerca-de-footer {
+                color:#FFFFFF !important;
+                font-size: 24px !important;
+                font-family: 'Montserrat', sans-serif !important;
+                line-height: 30px !important;
+                text-align: center !important;
+    
+}
+
+.h-acerca-de-footer2 {
+                color:#FFFFFF !important;
+                font-size: 16px !important;
+                font-family: 'Lato', sans-serif !important;
+                line-height: 20px !important;
+                text-align: center !important;
+    
+}
+
+.asj_franja_blanca{
+    background-color: #FFFFFF;
+}
+
+.asj_franja_amarilla-acerca-de {
+    background-color: #ffdd17;
+}
+
+.asj_franja_gris {
+    background-color: #f7f9f9;
+}
+
+.asj_franja_azul {
+    background-color: #1389b0;
+    margin-top:100px;
+}
+
+.asj_franja_blanca2 {
+    background-color: #fff;
+    margin-top:100px;
+}
+
+.page-center{
+              max-width: 1200px;
+              margin: 0 auto!important;
+              float: none!important;
+}
+
+.page-center-acerca-de-2{
+              max-width: 1800px;
+              margin: 0 auto!important;
+              float: none!important;
+              text-align: center !important;
+              height: auto !important;
+              display: block !important;
+              margin: 0 auto !important;
+              width:100% !important;
+          }
+          
+.page-center-acerca-de{
+              max-width: 1000px;
+              margin: 0 auto !important;
+              float: none !important;
+              text-align: center !important;
+              max-width:1000px !important;
+              height: auto !important;
+              display: block !important;
+              width:100% !important;
+          }
+          
+
+/* IMAGE CAPTION SLIDER */
+
+.hs_cos_flex-slider .superimpose .caption {
+    
+color: white;
+font-size: 1em !important;
+line-height: 1.1em;
+position: absolute;
+padding-left: 5% !important;
+padding-right: 5% !important;
+width: 90%;
+top: 40%;
+text-align: center;
+background-color: transparent;
+}
+
+/* IMAGE CAJA FLOTANDO CYCLONE */
+
+.full-width-bg-cyclone-colxi{
+    margin-top: -150px;
+	top: auto !important;
+    position:relative; 
+    left:auto;
+}
+
+.pagina_container_servicios_cyclone {
+    max-width: 1080px !important;
+    margin-left:auto  !important;
+    margin-right:auto  !important;
+    float:none !important;
+    text-align:center; 
+    margin-top:100px;
+    margin-bottom:100px; 
+}
+
+/* RESPONSIVE VIEW */
+@media (max-width:1200px) {
+    .asj_subheader h3{ display:none !important;}
+    .body-container-wrapper{ padding:0px 10px !important;
+    }  
+    .asj_header_logo{ /*margin-left:auto !important; margin-right:auto !important;*/ width:225px; padding-left:10px;}
+    .asj_header_logo_blanco{ /*margin-left:auto !important; margin-right:auto !important;*/ width:225px; padding-left:10px;}
+    .asj_subheader h1{ margin-left:10px  !important; }
+    .asj_author_avatar_container{display: none  !important;}
+    .asj_post_body_meta{display:none !important;}
+    .asj_footer{padding-left: 10px !important;  padding-right: 10px !important; text-align: center; !important}
+    .asj_footer_widget_3 img{display: block; margin-right: 0px;margin: auto;}
+    .hs-landing-page .widget-type-logo{ width: 215px !important; margin-left: auto !important; margin-right: auto !important;float: none;}
+    .full-width-bg-cyclone-colxi{ margin-top: 0px !important;}
+    .pagina_container_servicios_cyclone { margin-top:80px; }
+
+}
+
+@media (max-width:1300px) {
+    .fondo-responsive { background-image: url ('http://www.asmalljob.com/hubfs/videos/fondohome.jpg'); background-position:center bottom;
+    background-attachment:fixed;
+    background-repeat:no-repeat;
+    background-size:cover; }
+    video {visibility: hidden;}
+
+}
+
+
+.margin-thumbnail {
+    margin-bottom:10px !important;  
+}
+
+/* TESTIMONIOS CSS */
+
+.container_item_test {
+    padding-left:30px !important;
+    padding-right:30px !important;
+    padding-top:30px !important;
+    background-color: #f5f5f5 !important;
+}
+
+
+.testimonio_text {
+    font-size:17pt !important;
+    line-height: 26pt !important;
+}
+
+.img_cargo_container {
+    margin-top:40px;
+}
+
+.testimonio_cta_text {
+    padding-top:10px;
+    padding-bottom:10px;
+    color:#ffffff;
+    font-size:16px;
+    font-family:montserrat, sans-serif;
+    text-align:center;
+}
+
+
+/*  EQUIPO */
+
+.conecta-con-container {
+    background-color:#f5f5f5;
+    margin: 0 0 0 !important;
+    width: 100% !important;
+    border: #eeeeee 1px solid;
+    padding:30px;
+    
+}
+
+.equipo-text {
+    font-size:16pt !important;
+    line-height: 23pt !important;
+}
+
+.container-item-equipo {
+    padding-left:30px !important;
+    padding-right:60px !important;
+    padding-top:30px !important;
+    padding-bottom:30px !important;
+}
+
+.item-equipo{
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    border:1px solid #efefef;
+    margin-top:-1px;
+}
+
+
+
+/* PASSWORD PAGE */
+
+.page-center-pw{
+              max-width: 500px;
+              margin: 0px auto!important;
+              float: none!important;
+              background-color:#f5f5f5;
+              border: #EFEFEF 1px solid;
+}
+
+.pw-page-container {
+    
+    max-width: 400px;
+              margin: 30px auto!important;
+              float: none!important;
+    text-align:center !important;
+    
+}
+
+input[type="submit"] {
+padding: 10px!important;
+text-align: center!important;
+border: 1px solid #efefef!important;
+font-size: 14px!important;
+background-color: #333!important;
+color: white!important;
+font-weight: normal!important;
+padding-left: 20px!important;
+padding-right: 20px!important;
+border-radius: 8px!important;
+font-family: 'Lato',sans-serif!important;
+cursor: pointer;
+margin-top: 10px;
+}
+
+/* BACKGROUND NAVIDAD */
+
+.full-width-bg-navidad{
+   height:720px;
+   background-image: url ('http://www.asmalljob.com/hs-fs/hub/416379/file-2532318407-jpg/recursos_imagenes_blog/FORMACION/background-landing-formacion-2.jpg');
+   background-repeat: no-repeat;
+               
+}
+
+/* PARALLAX HOME */      
+
+.full-width-bg-streetmarketing-1{
+    height:350px;
+    background-position:center top;
+    background-attachment:fixed;
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-image: url ('http://www.asmalljob.com/hubfs/cabecera_asj-152458-edited.jpg');
+}
+
+.full-width-bg-faq{
+    height:350px;
+    background-position:center top;
+    background-attachment:fixed;
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-image: url ('http://www.asmalljob.com/hs-fs/hub/416379/file-2676634738-jpg/documents_content/FAQ_portada-2.jpg');
+}
+
+
+
+.full-width-bg-faq.fixdeproblem{
+    
+    height: 610px;
+    
+    
+}
+
+@media screen and (max-width:320px){
+.full-width-bg-faq.fixdeproblem{height: 1204px!important;}
+}
+
+@media screen and (max-width:375px){
+.full-width-bg-faq.fixdeproblem{height: 1015px;}
+}
+
+
+@media screen and (max-width:425px){
+.full-width-bg-faq.fixdeproblem{height: 1015px;}
+}
+
+/* BACKGROUND HOME Y ELEMENTOS HOME */
+
+.full-width-bg-home{
+    height:350px;               
+    background-position:center center;
+    background-attachment:fixed;
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-image: url ('http://www.asmalljob.com/hubfs/cabecera_asj_horizontal.jpg');  
+}
+
+
+.full-width-video-bg {
+
+padding:100px 0;
+color:#fff;
+
+}
+
+.bgvid {
+
+background-color:{{siteColor}};
+
+}
+
+video#bgvid {
+
+position: fixed;
+
+top: 50%;
+
+left: 50%;
+
+min-width: 100%;
+
+min-height: 100%;
+
+width: auto;
+
+height: auto;
+
+z-index: -100;
+
+-webkit-transform: translateX(-50%) translateY(-80%);
+
+transform: translateX(-50%) translateY(-80%);
+
+background: {{secondaryColor}};
+
+background-size: cover;
+
+}
+
+.white-background {
+
+     background-color: #fff;
+
+}
+
+.fondo_home_blog {
+    padding-top:100px;
+    padding-bottom:100px;
+    background-position:center bottom;
+    background-attachment:fixed;
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-image: url ('http://www.asmalljob.com/hubfs/fotohome.jpg');
+}
+
+.full-width-bg-homeq4nov2015{
+    height:600px; 
+    background-position:center bottom;
+    background-attachment:fixed;
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-image: url ('http://www.asmalljob.com/hubfs/fotohome.jpg');
+}
+
+.full-width-bg-homeq42015{
+    height:600px; 
+    background-position:center bottom;
+    background-attachment:fixed;
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-image: url ('http://www.asmalljob.com/hubfs/adaptada.jpg');
+    transition: all 0.9s ease;
+}
+
+.full-width-bg-homeq42015:hover{
+    height:600px; 
+    background-position:center bottom;
+    background-attachment:fixed;
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-image: url ('http://www.asmalljob.com/hubfs/adaptadadesaturada.jpg');
+}
+
+.cta_inboud_blog{
+    height:273px;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.4);
+    transition: all 0.9s ease;
+}
+
+.cta_inboud_blog:hover{
+    height:273px;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.cta_street_blog{
+    height:273px;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.4);
+    transition: all 0.9s ease;
+}
+
+.cta_street_blog:hover{
+    height:273px;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.cta_event_blog{
+    height:273px;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.4);
+    transition: all 0.9s ease;
+}
+
+.cta_event_blog:hover{
+    height:273px;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.6);
+}
+.cta_inbound_apartado{
+    height:273px;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.4);
+    transition: all 0.9s ease;
+}
+
+.cta_inbound_apartado:hover{
+    height:273px;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.6);
+}
+.cta_street_apartado{
+    height:273px;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.4);
+    transition: all 0.9s ease;
+}
+
+.cta_street_apartado:hover{
+    height:273px;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.cta_event_apartado{
+    height:273px;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.4);
+    transition: all 0.9s ease;
+}
+
+.cta_event_apartado:hover{
+    height:273px;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.6);
+}
+.bg-inbound-home {
+    height:273px;               
+    background-repeat:no-repeat;
+   
+}
+
+
+
+.s6Parallax1 {
+    height:400px;  
+    text-align:center;
+    margin-left:auto  !important;
+    margin-right:auto  !important;
+    background-position:center center;
+    background-repeat:no-repeat;
+	background-image: url('http://www.asmalljob.com/hubfs/asmalljob_home.jpg');
+}
+
+.fallingRocks {
+	width: 90%;
+	max-width: 650px;
+	position: relative;
+	padding: 80px 0 80px 0;
+}
+
+.bg-street-home {
+    height:273px;               
+     background-repeat:no-repeat;
+  
+}
+
+.bg-event-home {
+    height:273px;               
+    background-repeat:no-repeat;
+  
+}
+
+.bg-home-bloque {
+    height:273px;
+    background-color#efefef;  
+}
+
+.asj_home_newsletter{}
+.asj_home_newsletter .widget-type-blog_subscribe label{ display:none; }
+.asj_home_newsletter input[type="email"]{ 
+    margin-bottom:25px; 
+}
+
+.asj_home_newsletter .hs_cos_wrapper_type_raw_html h3{
+    margin-bottom:10px;
+}
+
+/* CTA HOME */
+
+.home-boxes-cta{
+    padding: 22px;
+    color: black;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 400 !important;
+    display: block;
+    border-top: 2px solid white;
+    background:#efefef;
+}
+
+.home-boxes-cta:hover{ background-color:#aaaaaa !important; }
+
+.bg-cta-conocenos {   background-color:#ffe500 !important;  }
+
+.bg-cta-inbound {  background-color:#ff9c3a !important; }
+
+.bg-cta-street { background-color:#3aaf6b !important;  }
+
+.bg-cta-event { background-color:#d75054 !important;  }
+
+
+
+/* MASONRY STRUCTURE CUSTOMIZATION */
+
+.masonry_conta{
+    max-width: 1200px;
+    margin: auto;  
+    padding-right:5px;
+    padding-left:5px;  
+    clear: both; 
+}
+
+.masonry_element{
+    max-width:390px;
+    border: 5px solid transparent; /* borde trasnparente que emula un MARGIN compatible con MASONRY */
+}
+
+
+/* masonry 4 columnas a 1080 */
+
+
+.masonry_element_4{
+    width:280px;
+    border: 5px solid transparent; /* borde trasnparente que emula un MARGIN compatible con MASONRY */
+}
+
+.infografiaflecha{
+    height:200px;
+    background-position:center right;
+    background-image: url ('http://www.asmalljob.com/hubfs/infografia_flecha.png');
+    transition: all 0.9s ease;
+}
+
+.infografiaflecha:hover{
+    height:200px;
+    background-position:center right;
+    background-image: url ('http://www.asmalljob.com/hubfs/infografia-flecha-hoverr.png');
+}
+
+.infografiaflechabis{
+    height:200px;
+    background-position:center right;
+    background-image: url ('http://www.asmalljob.com/hubfs/infografia-flecha-hoverr.png');
+    transition: all 0.9s ease;
+}
+
+.infografiaflecha2{
+    height:200px;
+    background-position:center left;
+    background-image: url ('http://www.asmalljob.com/hubfs/infografia-flechaa.png');
+    transition: all 0.9s ease;
+}
+
+.infografiaflecha2:hover{
+    height:200px;
+    background-position:center left;
+    background-image: url ('http://www.asmalljob.com/hubfs/infografia-flecha-hoverrr.png');
+    transition: all 0.9s ease;
+}
+
+.infografiaflechaexplicacion{
+    height:100px;
+    background-position:center right;
+    background-image: url ('http://www.asmalljob.com/hubfs/infografia-flecha-explicacion.png');
+    transition: all 0.9s ease;
+}
+
+.infografiaflechaexplicacion:hover{
+    height:100px;
+    background-position:center right;
+    background-image: url ('http://www.asmalljob.com/hubfs/infografia-flecha-hover-explicacion.png');
+}
+
+.infografiaflechaexplicacionbis{
+    height:100px;
+    background-position:center right;
+    background-image: url ('http://www.asmalljob.com/hubfs/infografia-flecha-hover-explicacion.png');
+}
+
+.infografiaflechaexplicacionclientes{
+    height:100px;
+    background-position:center right;
+    background-image: url ('http://www.asmalljob.com/hubfs/infografia-flecha-explicacion-clientes.png');
+    transition: all 0.9s ease;
+}
+
+.infografiaflechaexplicacionclientes:hover{
+    height:100px;
+    background-position:center right;
+    background-image: url ('http://www.asmalljob.com/hubfs/infografia-flecha-explicacion-hover-clientes.png');
+}
+
+.infografiaflecha2bis{
+    height:100px;
+    background-position:center left;
+    background-image: url ('http://www.asmalljob.com/hubfs/infografia-flecha-explicacion-hover-clientes.png');
+}
+
+@media (max-width: 400px){
+
+    .masonry_element_4{
+        width:300px;
+        border-left: 0px;
+        border-right:0px;
+        border-bottom:10px solid transparent;
+    }  
+    .masonry_conta{
+        padding-right:0px;
+        padding-left:0px; 
+      
+    }
+}
+
+/* ANIMAICON FLECHAS */
+
+@-webkit-keyframes flecha {
+    from { top: 0px;  }
+    to   { top: 30px; }
+}
+@keyframes flecha {
+    from {  top: 0px; }
+    to   { top: 30px; }
+}
+
+.flecha_animada{
+    -webkit-animation-name: flecha;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-duration: 1s;
+    
+    animation-name: flecha;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-duration: 1s;
+    
+    position: relative;
+    top: 0;
+    display: block;
+    margin: auto;
+}
+
+
+
+/* VARIOS */
+.portada_blog_caja_img img{
+    margin-bottom:30px;width:100% !important
+}
+
+.portada_blog_caja_blog{ 
+    margin-bottom:60px !important;
+}
+
+.row_social_circle_icon{
+    padding-top:100px; 
+    padding-bottom:80px;
+}
+
+.row_social_circle_icon img{
+    margin-bottom:20px;
+}
+
+/* HOME */
+
+.home_grey_box_sup{
+    background-color:#efefef; 
+    height:273px; 
+    padding:20px; 
+     font-family:lato, sans-serif; font-size:24px; line-height:26px; font-weight:300; font-style:italic; color:#000000;
+}
+
+.home-social-icons-top{
+    float: right;
+}
+
+.home-social-icons-top img{
+    width: 25px; 
+    margin: 0px 0px 0px 5px;
+}
+
+/* MOBIL */
+
+@media (max-width: 400px){
+    .h-acerca-de, .h-acerca-de-amarillo{ font-size:35px !important; }  
+    .h-acerca-de-footer2{ padding: 10px !important;}
+    .asj_franja_amarilla_footer .asj_disclaimer{ font-size: 16px;}
+    .hide_in_mobile{ display: none !important; }
+    .acerca_de_en_diferido_box{ margin-top: -250px; }
+    h1, h1.home{ font-size: 35px !important; }
+    #hs_cos_wrapper_module_142288926435011532 {
+        text-align: center !important;
+        float: left !important;  
+         margin-top: 30px;
+    }
+    #hs_cos_wrapper_module_142288926435011532 table{
+        float: none !important;
+        margin: auto;      
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    .pagina_container_servicios{
+        padding: 10px;
+        text-align: center !important;
+    }
+    .pagina_container_infografia{
+        text-align: center !important;
+    }
+    #hs_cos_wrapper_module_142288931026013076, #hs_cos_wrapper_module_142288946454515258, #hs_cos_wrapper_module_142288946343315222, #hs_cos_wrapper_module_142288946538615475 {
+        margin-top: 0px;
+        display: block;
+        text-align: center;    
+    }
+    .home_grey_box_sup > .row-fluid-wrapper{
+       margin-top: 130px;
+        margin: auto;
+        text-align: center;
+        display: block;
+        background: #fff;
+        
+    }
+    
+    
+    .home_grey_box_sup {
+        padding-top: 50px; 
+    }
+    .home-social-icons-top img{
+        width: 45px; 
+        margin: 5px;
+    }
+    .asj_franja_amarilla_footer #hs_cos_wrapper_module_140673508124314228 span{
+        display: block;
+        padding:10px;
+    }
+    #hs_cos_wrapper_module_14162274396011062{
+        margin-top: 200px !important;
+        display: block;
+    }
+    #hs_cos_wrapper_module_14162274396011062{
+        margin-top: 300px !important;
+        display: block;
+    }
+    #hs_cos_wrapper_module_14219430740552876{
+        margin-top: 50px;
+        display: block;
+    }
+    .hs-content-name-servicios-inbound-marketing .hs-cta-img, .hs-content-name-servicios-street-marketing .hs-cta-img{
+        display:block;
+        margin-bottom: 20px; 
+    }
+}
+
+.module_group_separador{
+    margin-bottom:200px;
+    }
+    
+.module_group_separador_canvas{
+    margin-bottom:80px;
+    }
+    
+.full-width-bg-home2{
+    height:300px;               
+    background-position:center center;
+    background-attachment:fixed;
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-image: url ('http://www.asmalljob.com/hs-fs/hub/416379/file-2132038230-jpg/Paginas_de_Servicios/Streetmkt/tricycle-4-C-DEF.jpg');  
+}
+    
+.full-width-bg-home3{
+    height:250px;               
+    background-position:center center;
+    background-attachment:fixed;
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-image: url ('http://www.asmalljob.com/hs-fs/hub/416379/file-2132038230-jpg/Paginas_de_Servicios/Streetmkt/tricycle-4-C-DEF.jpg');  
+}
+
+.full-width-bg-home_canvas{
+    padding-bottom:100px;
+    background-position:center center;
+    background-attachment:fixed;
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-image: url ('http://www.asmalljob.com/hubfs/ContactCanvas.jpg');  
+}
+
+.widget-type-form2 {
+    max-width: 1080px !important;
+    border-radius: 4px !important;
+    font-size: 16px !important;
+    font-weight: normal !important;
+    padding: 30px !important;
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+    margin-top: 20px !important;
+    margin-bottom: 0px !important;
+    
+    line-height: 28px !important;
+    background-color: white !important;
+    text-align: left !important;
+    display: block !important;
+    background-image: none !important;
+}
+
+#hs_cos_wrapper_module_14399005538881438 p, #hs_cos_wrapper_module_14399005538881438 li, #hs_cos_wrapper_module_14399005538881438 span, #hs_cos_wrapper_module_14399005538881438 label, #hs_cos_wrapper_module_14399005538881438 h1, #hs_cos_wrapper_module_14399005538881438 h2, #hs_cos_wrapper_module_14399005538881438 h3, #hs_cos_wrapper_module_14399005538881438 h4, #hs_cos_wrapper_module_14399005538881438 h5, #hs_cos_wrapper_module_14399005538881438 h6 {
+    font-family: Helvetica, Trebuchet MS, sans-serif !important;
+    color: #878787 !important;
+    font-size:16px;
+}
+
+.pagina_container_iwantit {
+    max-width: 400px !important;
+    margin-left:auto  !important;
+    margin-right:auto  !important;
+    float:none !important;
+}
+
+.widget-type-form2 input:hover {
+    background-color: #0088b2!important;
+    color: white!important; 
+    
+.pagina_container_servicios2 {
+    background: #efefef;
+    max-width: 800px !important;
+    margin-left:auto  !important;
+    margin-right:auto  !important;
+    margin-bottom: 100px !important;
+    float:none !important;
+}
+
+.container {
+	background: rgba(0,0,0,0.8);
+	color: white;
+	margin: 0 auto;
+	padding-bottom: 50px;
+	overflow: auto;
+	width: 960px;
+	
+	p {
+		margin: 0 40px;
+	}
+}

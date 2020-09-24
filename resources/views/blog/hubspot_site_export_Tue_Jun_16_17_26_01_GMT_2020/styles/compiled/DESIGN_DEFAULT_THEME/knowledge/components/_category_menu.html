@@ -1,0 +1,21 @@
+<!-- start coded_template: id:10265615282 path:@hubspot/themes/knowledge/components/_category_menu.html --><html><head><meta name="generator" content="HubSpot"></head><body><div class="kb-category-menu">
+  <ul>
+    
+  </ul>
+</div>
+
+<script>
+  kbDom.whenReady(function() {
+    document.querySelectorAll('.kb-category-menu svg').forEach(function(el) {
+      el.addEventListener('click', function(e) {
+        e.preventDefault();
+        var li = kbDom.closest('li', this);
+        if (li) {
+          li.classList.toggle('open');
+        }
+      });
+    })
+  })
+</script>
+<!-- end coded_template: id:10265615282 path:@hubspot/themes/knowledge/components/_category_menu.html -->
+</body></html>

@@ -1,0 +1,172 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="{{ html_lang }}" {{ html_lang_dir }}> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="{{ html_lang }}" {{ html_lang_dir }}>        <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="{{ html_lang }}" {{ html_lang_dir }}>               <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="{{ html_lang }}" {{ html_lang_dir }}> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="author" content="{{ meta_author }}">
+    <meta name="description" content="{{ page_meta.meta_description }}">
+    <meta name="generator" content="HubSpot">
+    <title>{{ page_meta.html_title }}</title>
+    {% if site_settings.favicon_src %}<link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />{% endif %}
+    
+{{ standard_header_includes }}
+
+</head>
+<body class="ucBlog1 ucBlog1Listing {{ builtin_body_classes }}" style="">
+    <div class="header-container-wrapper">
+    <div class="header-container container-fluid">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-1 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-global_group " style="" data-widget-type="global_group" data-x="0" data-w="12">
+{% include '/generated_global_groups/30757262798.html' %}
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+    </div><!--end header -->
+</div><!--end header wrapper -->
+
+<div class="body-container-wrapper">
+    <div class="body-container container-fluid">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-1 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget " style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+{% module_block module "module_15380757765041731" background_image='{"alt":"background-blog","height":500,"src":"https://cdn2.hubspot.net/hubfs/5929776/background-blog.jpg","width":1920}', form_field='{"form_id":"f7fe1d8c-d880-4b35-b063-aeb587ed1e1f","form_type":"HUBSPOT","message":"<p>Thanks for subscribing! You are now one informed marketer.</p>\\n<p>Grab your guide by clicking <span style=\\"text-decoration: underline; color: #f15924;\\"><a href=\\"https://www.campaigncreators.com/hubfs/CC_Intro_to_Lead_Gen.pdf\\" style=\\"color: #f15924; text-decoration: underline;\\" target=\\"_blank\\">here</a></span>.</p>","response_type":"inline"}', image='{"alt":"banner-site-abril-2020-mobile","height":230,"src":"https://cdn2.hubspot.net/hubfs/5929776/banner-site-abril-2020-mobile.png","width":230}', module_id=4054190, overrideable=False, path='/Marketplace/Campaign_Creators/Ultimate_Conversion_Blog_Summary/Custom_Modules/Blog - Banner Area With Form - UC_August2018', per_widget_wrapper_html='', subtitle='Tenha acesso a conteúdos ilimitados.', title='Bem Vindo ao Blog GestãoClick', widget_name='Blog - Banner Area With Form - UC_August2018', wrapping_html='', label='Blog - Banner Area With Form - UC_August2018' %}
+{% end_module_block %}
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-2 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell page-center" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-3 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget " style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+{% module_block module "module_154292261948552" item='[{"tag_name":"Controle Financeiro","tag_url":"https://www.campaigncreators.com/uc/blog/tag/tag-1"},{"tag_name":"Controle de Estoque","tag_url":"https://www.campaigncreators.com/uc/blog/tag/tag-2"},{"tag_name":"Controle Fiscal","tag_url":"https://www.campaigncreators.com/uc/blog/tag/tag-1"}]', module_id=4343431, overrideable=False, path='/Marketplace/Campaign_Creators/Ultimate_Conversion_Blog_Summary/Custom_Modules/Blog Filter Module - UC_August2018', per_widget_wrapper_html='', tag_field='["marketing","a-b-testing","branding","business-marketing","google"]', title='Conteúdos', widget_name='Blog Filter Module - UC_August2018', wrapping_html='', label='Blog Filter Module - UC_August2018' %}
+{% end_module_block %}
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-4 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-blog_content " style="" data-widget-type="blog_content" data-x="0" data-w="12">
+{% if is_listing_view %}<div class="ucBlogSection">
+  <div class="ucBlogListingWrapper cell-wrapper">
+    <div class="ucPostListing">
+      {% for content in contents %}
+      <div class="ucPostItem contents">
+        {% if not simple_list_page %}
+        <div class="ucPostInner">
+          <a href="{{content.absolute_url}}" class="abso-link"></a>
+          {% if content.post_list_summary_featured_image %}
+          {#<div class="ucFeatureImageBg" style="background-image: url('{{ content.post_list_summary_featured_image }}');"></div>#}
+          <div class="ucFeatureImageBg bg1">
+            <img src="{{ content.post_list_summary_featured_image }}" alt="{{ content.name }}">
+          </div>
+          {% endif %}
+          <div class="ucPostItemContent">  
+            <div class="ucPostHeader"> 
+              <div class="ucAuthorWrap">
+                {% if content.blog_post_author.avatar %}
+                <span class="ucAuthorAvatar"><img src="{{ content.blog_post_author.avatar }}"></span>
+                {% endif %}
+                <span>By <a class="ucAuthorLink" href="{{ group.absolute_url }}/author/{{ content.blog_post_author.slug }}">{{ content.blog_post_author.display_name }}</a></span>
+                <span>On {{ content.publish_date_local_time|datetimeformat('%B %e, %Y') }}</span>
+              </div>
+              <h2>
+                <a href="{{content.absolute_url}}">{{ content.name }}</a>
+              </h2>
+            </div> 
+            <div class="ucPostBody ucTotalWords" data-file="{{content.absolute_url}}" data-target="article">
+              {{ content.post_list_content|safe|truncatehtml(130, '...' , false) }}<br>
+            </div>
+            <em class="ucTimeToRead">(<span class="ucEta"></span> read <span class="ucWords hide" style=""></span>)</em>
+            {% if content.tag_list %}
+            <p id="ucHubspotTopicData"> Tags:
+              {% for tag in content.tag_list %}
+              {% if loop.index <= 3 %}
+              <a class="ucTopicLink" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>{% if not loop.last %},{% endif %}
+              {% endif %}
+              {% endfor %}
+            </p>
+            {% endif %}
+          </div>
+        </div>
+        {% else %}
+        <h2 class="ucPostListingSimple"><a href="{{content.absolute_url}}">{{ content.name }}</a></h2>
+        {% endif %}
+      </div> 
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<div class="ucCustomBlogPagination">
+  
+   <a class="ucNextPostsLink" id="loadMore">VIEW MORE</a>
+  
+</div>
+
+
+
+{% else %}<!--THis blog uses a seprate blog listing layout-->{% endif %}</div>
+
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-5 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget " style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+{% module_block module "module_154239833048171" module_id=4313489, overrideable=False, path='/Marketplace/Campaign_Creators/Ultimate_Conversion_Blog_Summary/Custom_Modules/Bottom - Form Module - UC_August2018', per_widget_wrapper_html='', widget_name='Bottom - Form Module - UC_August2018', wrapping_html='', title='Sua visita é importante para nós!', subtitle='Confira todos os nossos materias gratuitos.', label='Bottom - Form Module - UC_August2018' %}
+{% module_attribute "form" is_json=True %}{"form_id":"0c3df490-19ed-4291-a4d1-752c2e0b064a","form_type":"HUBSPOT","message":"Thanks for submitting the form.","response_type":"inline"}{% end_module_attribute %}
+{% end_module_block %}
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+    </div><!--end body -->
+</div><!--end body wrapper -->
+
+<div class="footer-container-wrapper">
+    <div class="footer-container container-fluid">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-1 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget " style="min-height:0px;" data-widget-type="custom_widget" data-x="0" data-w="12">
+{% module_block module "module_15380761776232045" module_id=4053080, overrideable=False, path='/Marketplace/Campaign_Creators/Ultimate_Conversion_Blog_Summary/Custom_Modules/Blog Listing - Js Module - UC_August2018', per_widget_wrapper_html='', widget_name='Blog Listing - Js Module - UC_August2018', wrapping_html='', label='Blog Listing - Js Module - UC_August2018' %}
+{% end_module_block %}
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-2 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-global_group " style="" data-widget-type="global_group" data-x="0" data-w="12">
+{% include '/generated_global_groups/30756419815.html' %}
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+    </div><!--end footer -->
+</div><!--end footer wrapper -->
+
+    {{ standard_footer_includes }}
+    
+    <!-- Generated by the HubSpot Template Builder - template version 1.03 -->
+</body>
+</html>

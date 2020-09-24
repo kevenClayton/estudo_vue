@@ -1,0 +1,7 @@
+{% import 'DESIGN_DEFAULT_THEME/knowledge/components/_settings.html' %}
+<div class="kb__support-form-section">
+  <h1 class="kb__support-form-title">
+    {{ knowledge_base.supportFormTitle }}
+  </h1>
+  {% form "support_form" form_key="kb_support_form" label="Support form", form_to_use="{{ knowledge_base.supportFormId }}" %}
+</div>
