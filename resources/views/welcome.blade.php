@@ -17,19 +17,19 @@
                 <div class="col-sm-6">
                     <ul  class="list-group" v-for="(pessoas, i) in pessoa">
                         <li class="list-group-item" >
-                            <span class="text-muted">@{{ i }} - Nome: </span>@{{ pessoa.nome }}
+                            <span class="text-muted">Nome: </span>@{{ pessoa.nome }}
                         </li>
                         <li class="list-group-item" >
-                            <span class="text-muted">@{{ i }} - Telefone: </span>@{{ pessoa.telefone }}
+                            <span class="text-muted">Telefone: </span>@{{ pessoa.telefone }}
                         </li>
                         <li class="list-group-item">
-                            <span class="text-muted">@{{ i }} - Novidades: </span>@{{ pessoa.novidades }}
+                            <span class="text-muted">Novidades: </span>@{{ pessoa.novidades }}
                         </li>
                         <li class="list-group-item">
-                            <span class="text-muted">@{{ i }} - Interesses: </span>@{{ pessoa.interesses }}
+                            <span class="text-muted">Interesses: </span>@{{ pessoa.interesses }}
                         </li>
                         <li class="list-group-item">
-                            <span class="text-muted">@{{ i }} - Conheceu: </span>@{{ pessoa.conheceu }}
+                            <span class="text-muted">Conheceu: </span>@{{ pessoa.conheceu }}
                         </li>
                     </ul>
                     <p v-else>Não existe nenhuma linguagem</p>
