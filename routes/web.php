@@ -19,3 +19,6 @@ Route::get('/', function () {
 Route::get('/gerar-xml-blog', function () {
     return view('blog.gerar_xml');
 });
+Route::get('/aula-7', function () {
+    return view('aula7');
+});
