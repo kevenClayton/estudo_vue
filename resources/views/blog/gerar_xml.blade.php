@@ -2,6 +2,8 @@
 
 	$json_file = file_get_contents("artigos.json");
     $itens = json_decode($json_file);
+
+
     // $itens = (object) $json_file;
     // echo '<pre>';
     //    var_dump( $itens[2]->data);
@@ -78,6 +80,7 @@ echo '
         <guid isPermaLink="false">https://gestaoclick.com.br/blog/'.$artigo->url.'/</guid>
         <description></description>
         <content:encoded><![CDATA[<!-- wp:tadv/classic-paragraph -->
+        <img src="'.$artigo->imagem.'" alt="'.$artigo->chamada.'" width="1" height="1" style="min-height:1px!important;width:1px!important;border-width:0!important;margin-top:0!important;margin-bottom:0!important;margin-right:0!important;margin-left:0!important;padding-top:0!important;padding-bottom:0!important;padding-right:0!important;padding-left:0!important; ">
         '.$artigo->descricao.'
         <!-- /wp:tadv/classic-paragraph -->]]>
         </content:encoded>
